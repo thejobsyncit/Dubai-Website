@@ -7,42 +7,42 @@ const ServicesCards = () => {
     {
       title: "Custom Software Development",
       description: "We build customized web and mobile applications that align with your business goals, ensuring high performance and scalability.",
-      img: "/business_meeting_1784705676985.png"
+      img: "/real_arab_1.png"
     },
     {
       title: "Cloud Solutions",
       description: "Effortlessly migrate, manage, and optimize your systems with our secure and scalable cloud infrastructure services.",
-      img: "/hero_tech_bg_1784706515273.png" // using available tech img
+      img: "/real_arab_2.png"
     },
     {
       title: "UI/UX Design",
       description: "Deliver intuitive and engaging digital experiences with clean, user-friendly interface design tailored to your audience.",
-      img: "/about_team_1784706532944.png"
+      img: "/real_arab_3.png"
     },
     {
       title: "Digital Transformation",
       description: "Modernize your legacy systems and adopt cutting-edge technologies to stay competitive in a rapidly evolving digital world.",
-      img: "/business_shaking_hands_1784705704439.png"
+      img: "/real_arab_4.png"
     },
     {
       title: "Cybersecurity",
       description: "Protect your digital assets with advanced security protocols, vulnerability assessments, and robust threat mitigation strategies.",
-      img: "/service_cybersecurity_1784711034578.png"
+      img: "/real_arab_5.png"
     },
     {
       title: "IT Consulting",
       description: "Strategic technology planning and advisory services to help you make informed decisions and align IT with business objectives.",
-      img: "/service_it_consulting_1784711008371.png"
+      img: "/real_arab_6.png"
     },
     {
       title: "Data Analytics",
       description: "Unlock actionable insights from your business data to drive growth, optimize operations, and improve decision-making.",
-      img: "/tech_hero_1784711258499.png"
+      img: "/dubai_team_3.png"
     },
     {
       title: "Enterprise Resource Planning",
       description: "Streamline your business operations with customized ERP solutions that connect finance, HR, and supply chain.",
-      img: "/business_consultant_1784705724844.png"
+      img: "/dubai_team_4.png"
     }
   ];
 

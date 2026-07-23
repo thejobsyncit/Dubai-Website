@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="hero-section">
       <div className="hero-bg-overlay">
-        <img src="/hero_tech_bg_1784706515273.png" alt="Tech Background" className="hero-bg-img" />
+        <img src="/real_hero_bg.jpg" alt="Tech Background" className="hero-bg-img" />
       </div>
       
       <div className="container hero-container">
@@ -28,7 +28,7 @@ const Hero = () => {
             <p>Years of <br/> Experience</p>
           </div>
           <div className="exp-image">
-            <img src="/about_team_1784706532944.png" alt="Experience" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src="/real_hero_exp.jpg" alt="Experience" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
         </div>
       </div>

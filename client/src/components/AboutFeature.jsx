@@ -6,11 +6,11 @@ import './AboutFeature.css';
 const AboutFeature = () => {
   const [currentImage, setCurrentImage] = React.useState(0);
   const images = [
-    "/about_team_1784706532944.png",
-    "/business_shaking_hands_1784705704439.png",
-    "/tech_about_1_1784711238631.png",
-    "/business_meeting_1784705676985.png",
-    "/business_consultant_1784705724844.png"
+    "/real_about_1.jpg",
+    "/real_about_2.jpg",
+    "/real_about_3.jpg",
+    "/real_about_4.jpg",
+    "/real_about_5.jpg"
   ];
 
   const handlePrev = () => {

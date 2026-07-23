@@ -9,21 +9,21 @@ const Blog = () => {
       date: "July 15, 2026",
       excerpt: "Explore how serverless architectures and multi-cloud strategies are reshaping enterprise IT.",
       category: "Cloud",
-      img: "/service_cloud_1784711019519.png"
+      img: "/real_blog_1.jpg"
     },
     {
       title: "Cybersecurity Threats You Must Ignore At Your Peril",
       date: "July 02, 2026",
       excerpt: "A deep dive into zero-trust networks and the rising importance of AI in threat detection.",
       category: "Security",
-      img: "/service_cybersecurity_1784711034578.png"
+      img: "/real_blog_2.jpg"
     },
     {
       title: "Scaling Engineering Teams: A Practical Guide",
       date: "June 20, 2026",
       excerpt: "How to effectively manage and scale distributed teams while maintaining high code quality.",
       category: "Management",
-      img: "/service_it_consulting_1784711008371.png"
+      img: "/real_blog_3.jpg"
     }
   ];
 
