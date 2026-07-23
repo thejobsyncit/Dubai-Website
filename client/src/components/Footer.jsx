@@ -4,13 +4,13 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer bg-primary">
+    <footer className="footer">
       <div className="container footer-container">
         
         <div className="footer-col">
           <div className="footer-logo" style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
-            <img src="/logo.jpg" alt="THE JASYNC Logo" style={{ height: '60px', borderRadius: '4px' }} />
-            <h3 className="footer-title" style={{ margin: 0 }}>THE JASYNC</h3>
+            <img src="/logo.jpg" alt="THE JOBSYNC Logo" style={{ height: '60px', borderRadius: '4px' }} />
+            <h3 className="footer-title" style={{ margin: 0 }}>THE JOBSYNC</h3>
           </div>
           <p className="footer-desc text-white">
             Transforming Ideas into Digital Success. We empower businesses across the UAE with innovative technology solutions.
@@ -65,8 +65,12 @@ const Footer = () => {
 
       </div>
       <div className="footer-bottom">
-        <div className="container text-center">
-          <p>&copy; {new Date().getFullYear()} THE JASYNC. All rights reserved.</p>
+        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+          <p>&copy; {new Date().getFullYear()} THE JOBSYNC UAE. All rights reserved.</p>
+          <div style={{ display: 'flex', gap: '1rem', fontSize: '0.85rem' }}>
+            <a href="#" style={{ color: 'var(--color-text-light)' }}>Privacy Policy</a>
+            <a href="#" style={{ color: 'var(--color-text-light)' }}>Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>

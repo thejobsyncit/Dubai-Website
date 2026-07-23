@@ -14,12 +14,12 @@ const Hero = () => {
           <span className="hero-subtitle">PREMIER RECRUITMENT AGENCY IN UAE</span>
           <h1>
             Connecting Talent <br/>
-            with Opportunity
+            with <span>Opportunity</span>
           </h1>
           <p>
             We provide expert staffing and HR solutions across the UAE, helping businesses build high-performing teams and professionals find their dream careers.
           </p>
-          <Link to="/about" className="btn btn-white hero-btn" style={{ display: 'inline-block', textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>Discover More</Link>
+          <Link to="/about" className="btn btn-primary" onClick={() => window.scrollTo(0, 0)}>Discover More</Link>
         </div>
 
         <div className="experience-card" data-aos="fade-left" data-aos-delay="300">

@@ -24,27 +24,27 @@ const FAQ = () => {
 
   return (
     <div className="page-wrapper">
-      <div className="page-header bg-primary text-white">
-        <div className="container" style={{ textAlign: 'center' }}>
-          <h1>Frequently Asked Questions</h1>
-          <div className="breadcrumb" style={{ fontSize: '1rem', marginTop: '15px', marginBottom: '15px' }}>
-            <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link> <span style={{ margin: '0 10px' }}>/</span> <span style={{ opacity: 0.8 }}>FAQ</span>
+      <div className="page-header">
+        <div className="container">
+          <h1 data-aos="fade-up">Frequently Asked Questions</h1>
+          <div className="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+            <Link to="/">Home</Link> <span style={{ margin: '0 10px', color: 'var(--color-text-light)' }}>/</span> <span style={{ color: 'var(--color-white)' }}>FAQ</span>
           </div>
-          <p>Find quick answers to common questions about our services.</p>
+          <p data-aos="fade-up" data-aos-delay="200">Find quick answers to common questions about our services.</p>
         </div>
       </div>
       
       <div className="container page-content">
-        <div className="content-box" style={{ maxWidth: '800px', margin: '-3rem auto 0' }}>
+        <div className="content-box" style={{ maxWidth: '800px', margin: '-5rem auto 0' }} data-aos="fade-up" data-aos-delay="300">
           {faqs.map((faq, i) => (
-            <div key={i} style={{ borderBottom: '1px solid #eee', padding: '1.5rem 0' }}>
-              <h3 style={{ fontSize: '1.2rem', color: 'var(--color-primary)', marginBottom: '0.8rem' }}>{faq.q}</h3>
-              <p style={{ color: 'var(--color-text-main)', lineHeight: '1.6' }}>{faq.a}</p>
+            <div key={i} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.05)', padding: '1.5rem 0' }}>
+              <h3 style={{ fontSize: '1.2rem', color: 'var(--color-white)', marginBottom: '0.8rem', fontFamily: 'var(--font-family-serif)' }}>{faq.q}</h3>
+              <p style={{ color: 'var(--color-text-light)', lineHeight: '1.6' }}>{faq.a}</p>
             </div>
           ))}
           <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-            <p style={{ marginBottom: '1rem' }}>Still have questions?</p>
-            <a href="/contact" className="btn btn-primary">Contact Us directly</a>
+            <p style={{ marginBottom: '1rem', color: 'var(--color-text-main)' }}>Still have questions?</p>
+            <Link to="/contact" className="btn btn-primary">Contact Us directly</Link>
           </div>
         </div>
       </div>

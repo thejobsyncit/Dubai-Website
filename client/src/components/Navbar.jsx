@@ -62,7 +62,7 @@ const Navbar = () => {
           <Link to="/" className="logo">
             <img src="/logo.jpg" alt="THE JASYNC Logo" className="brand-logo" />
             <div className="logo-text">
-              THE JASYNC
+              THE JOBSYNC<span>UAE</span>
             </div>
           </Link>
 

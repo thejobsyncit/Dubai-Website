@@ -34,7 +34,7 @@ const AboutFeature = () => {
             <img src={images[(currentImage + 1) % images.length]} alt="Team Discussion" style={{ transition: 'opacity 0.3s ease-in-out' }} />
           </div>
           
-          <div className="stats-box bg-primary" data-aos="fade-up" data-aos-delay="500">
+          <div className="stats-box" data-aos="fade-up" data-aos-delay="500">
             <h3>1M+</h3>
             <p>Overall happy<br/>Customers</p>
           </div>
@@ -42,13 +42,13 @@ const AboutFeature = () => {
           {/* Decorative Arrows */}
           <div className="about-arrows">
             <div className="arrow-circle" onClick={handlePrev}><ArrowLeft size={16} /></div>
-            <div className="arrow-circle bg-dark" onClick={handleNext}><ArrowRight size={16} color="white" /></div>
+            <div className="arrow-circle" onClick={handleNext}><ArrowRight size={20} /></div>
           </div>
         </div>
 
         {/* Right Side: Content */}
         <div className="about-right" data-aos="fade-left" data-aos-delay="200">
-          <Link to="/about" className="section-label bg-primary text-white" style={{ display: 'inline-block', textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>About Us</Link>
+          <Link to="/about" className="section-label" style={{ display: 'inline-block', textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>About Us</Link>
           <h2>Scaling Engineering Teams for Growing IT Companies</h2>
           <p className="text-light">
             Helping IT companies scale faster with expert engineering talent and flexible development support. 

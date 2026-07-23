@@ -29,18 +29,18 @@ const Blog = () => {
 
   return (
     <div className="page-wrapper">
-      <div className="page-header bg-primary text-white">
-        <div className="container" style={{ textAlign: 'center' }}>
-          <h1>Our Blog</h1>
-          <div className="breadcrumb" style={{ fontSize: '1rem', marginTop: '15px', marginBottom: '15px' }}>
-            <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link> <span style={{ margin: '0 10px' }}>/</span> <span style={{ opacity: 0.8 }}>Blog</span>
+      <div className="page-header">
+        <div className="container">
+          <h1 data-aos="fade-up">Our Blog</h1>
+          <div className="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+            <Link to="/">Home</Link> <span style={{ margin: '0 10px', color: 'var(--color-text-light)' }}>/</span> <span style={{ color: 'var(--color-white)' }}>Blog</span>
           </div>
-          <p>Insights, news, and trends from the world of enterprise IT.</p>
+          <p data-aos="fade-up" data-aos-delay="200">Insights, news, and trends from the world of enterprise IT.</p>
         </div>
       </div>
       
       <div className="container page-content">
-        <div className="content-box">
+        <div className="content-box" style={{ margin: '-5rem auto 0' }} data-aos="fade-up" data-aos-delay="300">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
             {posts.map((post, i) => (
               <div key={i} className="blog-card" data-aos="fade-up" data-aos-delay={i * 150}>

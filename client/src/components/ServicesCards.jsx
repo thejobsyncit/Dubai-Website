@@ -47,12 +47,12 @@ const ServicesCards = () => {
   ];
 
   return (
-    <section className="services-section section-padding bg-white">
+    <section className="services-section section-padding">
       <div className="container services-container">
         
         <div className="services-header text-center" data-aos="fade-up">
-          <Link to="/services" className="section-label bg-primary text-white" style={{ display: 'inline-block', textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>Our Services</Link>
-          <h2 className="text-primary">Complete IT solutions to grow your business.</h2>
+          <Link to="/services" className="section-label" style={{ display: 'inline-block', textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>Our Services</Link>
+          <h2>Complete IT solutions to grow your business.</h2>
         </div>
 
         <div className="services-grid">
