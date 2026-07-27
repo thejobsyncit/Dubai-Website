@@ -146,3 +146,17 @@
   }
 }
 
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 4rem;
+  }
+  
+  .footer-container {
+    gap: 2.5rem;
+  }
+
+  .footer-title {
+    font-size: 1.4rem;
+  }
+}
+

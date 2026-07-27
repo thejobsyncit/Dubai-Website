@@ -161,3 +161,45 @@
   }
 }
 
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding: 6rem 0 4rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero-content p {
+    font-size: 1.05rem;
+  }
+
+  .experience-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 2rem 0 0 0;
+    padding: 1.5rem;
+    gap: 1.2rem;
+  }
+
+  .exp-info h2 {
+    font-size: 2.8rem;
+  }
+
+  .exp-info p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .experience-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+

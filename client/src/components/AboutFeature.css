@@ -270,3 +270,43 @@
   }
 }
 
+@media (max-width: 768px) {
+  .about-section {
+    padding: 5rem 0;
+  }
+
+  .about-image-main {
+    height: 280px;
+  }
+
+  .about-image-secondary {
+    width: 160px;
+    height: 160px;
+    border-width: 4px;
+    top: 60%;
+  }
+
+  .stats-box {
+    right: 15px;
+    bottom: -20px;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .stats-box h3 {
+    font-size: 2.2rem;
+  }
+
+  .stats-box p {
+    font-size: 0.8rem;
+  }
+
+  .about-right h2 {
+    font-size: 2rem;
+  }
+
+  .feature-list li {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+

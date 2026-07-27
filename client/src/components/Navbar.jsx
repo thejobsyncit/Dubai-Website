@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { MapPin, Mail, Clock, PhoneCall } from 'lucide-react';
+import { MapPin, Mail, Clock, PhoneCall, Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +17,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <div className={`navbar-wrapper ${scrolled ? 'glass' : ''}`}>
       {/* Top Bar */}
@@ -24,7 +29,7 @@ const Navbar = () => {
           <div className="topbar-left">
             <span className="topbar-item">
               <MapPin size={14} className="text-gold" />
-              Dubai Creek Tower - 1st St - Deira-Riggat Al Buteen
+              Dubai Creek Tower - Deira-Riggat Al Buteen
             </span>
             <span className="topbar-item">
               <Mail size={14} className="text-gold" />
@@ -34,7 +39,7 @@ const Navbar = () => {
           <div className="topbar-right">
             <span className="topbar-item">
               <Clock size={14} className="text-gold" />
-              Office Hours: 9:00 AM to 06:00 PM
+              Office Hours: 9:00 AM - 06:00 PM
             </span>
             <div className="topbar-socials">
               <a href="#" className="social-icon">
@@ -67,20 +72,35 @@ const Navbar = () => {
       {/* Main Navbar */}
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container nav-container">
-          <Link to="/" className="logo">
+          <Link to="/" className="logo" onClick={closeMobileMenu}>
             <img src="/logo.jpg" alt="THE JASYNC Logo" className="brand-logo" />
             <div className="logo-text">
               THE JASYNC
             </div>
           </Link>
 
-          <ul className="nav-links">
-            <li><Link to="/" className={currentPath === '/' ? 'active' : ''}>Home</Link></li>
-            <li><Link to="/about" className={currentPath === '/about' ? 'active' : ''}>About Us</Link></li>
-            <li><Link to="/services" className={currentPath === '/services' ? 'active' : ''}>Service</Link></li>
-            <li><Link to="/blog" className={currentPath === '/blog' ? 'active' : ''}>Blog</Link></li>
-            <li><Link to="/contact" className={currentPath === '/contact' ? 'active' : ''}>Contact Us</Link></li>
-            <li><Link to="/faq" className={currentPath === '/faq' ? 'active' : ''}>FAQ</Link></li>
+          <button 
+            className="mobile-menu-btn" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Navigation Menu"
+          >
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+
+          <ul className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+            <li><Link to="/" className={currentPath === '/' ? 'active' : ''} onClick={closeMobileMenu}>Home</Link></li>
+            <li><Link to="/about" className={currentPath === '/about' ? 'active' : ''} onClick={closeMobileMenu}>About Us</Link></li>
+            <li><Link to="/services" className={currentPath === '/services' ? 'active' : ''} onClick={closeMobileMenu}>Service</Link></li>
+            <li><Link to="/blog" className={currentPath === '/blog' ? 'active' : ''} onClick={closeMobileMenu}>Blog</Link></li>
+            <li><Link to="/contact" className={currentPath === '/contact' ? 'active' : ''} onClick={closeMobileMenu}>Contact Us</Link></li>
+            <li><Link to="/faq" className={currentPath === '/faq' ? 'active' : ''} onClick={closeMobileMenu}>FAQ</Link></li>
+            
+            <li className="mobile-contact-item">
+              <a href="tel:+971547405625" className="mobile-call-btn">
+                <PhoneCall size={18} />
+                <span>Call us: +971 54 740 5625</span>
+              </a>
+            </li>
           </ul>
 
           <div className="nav-contact">
