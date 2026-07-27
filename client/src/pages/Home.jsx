@@ -8,6 +8,7 @@ const Home = () => {
   return (
     <>
       <Hero />
+      <Stats />
       <AboutFeature />
       <ServicesCards />
     </>
@@ -15,3 +16,4 @@ const Home = () => {
 };
 
 export default Home;
+

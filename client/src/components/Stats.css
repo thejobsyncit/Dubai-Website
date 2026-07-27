@@ -1,15 +1,16 @@
 .stats-section {
-  padding: 4rem 0;
-  background-color: var(--color-dark-bg);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 3.5rem 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--color-surface-alt) 100%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  position: relative;
+  z-index: 20;
 }
 
 .stats-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 4rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
@@ -17,47 +18,59 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  padding: 1.5rem 2.5rem;
+  background: #FFFFFF;
+  border-radius: var(--border-radius-md);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+  transition: var(--transition-bounce);
+  cursor: pointer;
+  flex: 1;
+  min-width: 260px;
+}
+
+.stat-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--color-gold);
+  box-shadow: 0 20px 35px -10px rgba(212, 175, 55, 0.25);
 }
 
 .stat-icon {
-  color: var(--color-accent);
+  color: var(--color-gold);
+  padding: 10px;
+  background: rgba(212, 175, 55, 0.12);
+  border-radius: 14px;
+  transition: var(--transition-smooth);
+}
+
+.stat-item:hover .stat-icon {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  transform: rotate(10deg) scale(1.1);
 }
 
 .stat-info {
   display: flex;
-  align-items: center;
-  gap: 0.8rem;
+  flex-direction: column;
 }
 
 .stat-number {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--color-white);
-  font-family: var(--font-family-serif);
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-primary);
+  font-family: var(--font-heading);
 }
 
 .stat-label {
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
   text-transform: uppercase;
-  color: var(--color-text-light);
-  letter-spacing: 0.05em;
-  max-width: 120px;
-  line-height: 1.4;
+  letter-spacing: 0.5px;
 }
 
 .stat-divider {
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(180deg, rgba(212,175,55,0) 0%, rgba(212,175,55,0.4) 50%, rgba(212,175,55,0) 100%);
+  display: none;
 }
 
-@media (max-width: 768px) {
-  .stats-container {
-    gap: 2rem;
-  }
-  .stat-divider {
-    display: none;
-  }
-}

@@ -6,11 +6,9 @@ import './AboutFeature.css';
 const AboutFeature = () => {
   const [currentImage, setCurrentImage] = React.useState(0);
   const images = [
-    "/real_about_1.jpg",
-    "/real_about_2.jpg",
-    "/real_about_3.jpg",
-    "/real_about_4.jpg",
-    "/real_about_5.jpg"
+    "/corporate_team_1.png",
+    "/corporate_team_2.png",
+    "/corporate_team_3.png"
   ];
 
   const handlePrev = () => {
@@ -41,7 +39,7 @@ const AboutFeature = () => {
           
           {/* Decorative Arrows */}
           <div className="about-arrows">
-            <div className="arrow-circle" onClick={handlePrev}><ArrowLeft size={16} /></div>
+            <div className="arrow-circle" onClick={handlePrev}><ArrowLeft size={20} /></div>
             <div className="arrow-circle" onClick={handleNext}><ArrowRight size={20} /></div>
           </div>
         </div>
@@ -57,15 +55,15 @@ const AboutFeature = () => {
 
           <ul className="feature-list">
             <li>
-              <CheckCircle2 className="check-icon" size={20} />
+              <CheckCircle2 className="check-icon" size={24} />
               <span>Tailored Recruitment Solutions</span>
             </li>
             <li>
-              <CheckCircle2 className="check-icon" size={20} />
+              <CheckCircle2 className="check-icon" size={24} />
               <span>Dedicated Industry Experts</span>
             </li>
             <li>
-              <CheckCircle2 className="check-icon" size={20} />
+              <CheckCircle2 className="check-icon" size={24} />
               <span>Rapid Team Scaling & Deployment</span>
             </li>
           </ul>
