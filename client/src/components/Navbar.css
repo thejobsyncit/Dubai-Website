@@ -277,23 +277,34 @@
     border-top: 1px solid rgba(226, 232, 240, 0.8);
   }
 
-  .mobile-call-btn {
+  .mobile-socials {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
-    padding: 1rem 1.5rem;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-    color: #FFFFFF !important;
-    border-radius: 50px;
-    font-size: 1rem !important;
-    font-weight: 700;
-    box-shadow: 0 8px 20px -4px rgba(0, 102, 255, 0.3);
+    gap: 1.2rem;
+    width: 100%;
+    padding: 0.5rem 0;
   }
 
-  .mobile-call-btn:hover {
-    background: linear-gradient(135deg, var(--color-gold) 0%, #A6801C 100%);
-    transform: translateY(-2px);
+  .mobile-social-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-surface-alt);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+  }
+
+  .mobile-social-icon:hover {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: #FFFFFF !important;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(11, 37, 69, 0.2);
+    border-color: transparent;
   }
 }
 
