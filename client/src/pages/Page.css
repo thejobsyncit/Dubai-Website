@@ -259,3 +259,66 @@
   gap: 0.5rem;
 }
 
+/* ANTI-SHAKE & MOBILE ALIGNMENT OVERRIDES FOR ALL PAGES (< 768px) */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 6.5rem 1rem 3.5rem !important;
+  }
+
+  .page-header h1 {
+    font-size: 2.2rem !important;
+  }
+
+  .page-header p {
+    font-size: 1.05rem !important;
+  }
+
+  .content-box {
+    padding: 1.8rem 1.25rem !important;
+    margin-top: -2rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .content-box h2 {
+    font-size: 1.8rem !important;
+  }
+
+  /* Force all multi-column inline grids (Contact form, About cards, Blog grid) into a clean 1-column stack on phones */
+  .content-box [style*="grid-template-columns"],
+  .content-box [style*="gridTemplateColumns"],
+  .content-box [style*="repeat"],
+  .content-box [style*="auto-fit"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  /* Ensure form inputs and spans take full width without squishing */
+  .content-box [style*="grid-column"],
+  .content-box [style*="gridColumn"] {
+    grid-column: span 1 !important;
+    width: 100% !important;
+  }
+
+  /* Ensure flex containers on Services page stack cleanly without overflowing 100vw */
+  .content-box [style*="flex: 1 1"],
+  .content-box [style*="flex"] {
+    flex: 1 1 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .form-input {
+    padding: 0.9rem 1rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  .premium-card,
+  .blog-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
