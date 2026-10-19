@@ -1,7 +1,7 @@
 .services-section {
   padding-top: 7rem;
   padding-bottom: 9rem;
-  background: linear-gradient(180deg, var(--color-dark-bg) 0%, #FFFFFF 100%);
+  background: #FAFAFC;
   position: relative;
 }
 
@@ -14,6 +14,7 @@
   text-align: center;
 }
 
+/* Pill badge: background white, text plum */
 .section-label {
   display: inline-block;
   padding: 0.5rem 1.3rem;
@@ -21,19 +22,19 @@
   font-weight: 700;
   border-radius: 50px;
   margin-bottom: 1.5rem;
-  background: rgba(197, 155, 39, 0.12);
-  color: var(--color-gold);
-  border: 1px solid rgba(197, 155, 39, 0.35);
+  background: var(--white);
+  color: var(--plum);
+  border: 1px solid rgba(56, 25, 50, 0.12);
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  box-shadow: 0 4px 12px rgba(197, 155, 39, 0.08);
+  box-shadow: 0 4px 12px rgba(56, 25, 50, 0.05);
 }
 
 .services-header h2 {
   font-size: 3.2rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  color: var(--color-primary);
+  color: var(--plum);
   line-height: 1.2;
 }
 
@@ -44,13 +45,13 @@
 }
 
 .service-card {
-  background: #FFFFFF;
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: var(--white);
+  border: 1px solid var(--cream-dark);
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 10px 30px -10px rgba(56, 25, 50, 0.06);
   transition: var(--transition-bounce);
-  color: var(--color-text-main);
+  color: var(--plum);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -63,15 +64,15 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-gold));
+  background: linear-gradient(90deg, var(--plum), var(--plum-soft));
   opacity: 0;
   transition: var(--transition-smooth);
 }
 
 .service-card:hover {
   transform: translateY(-12px) scale(1.02);
-  border-color: var(--color-gold);
-  box-shadow: 0 25px 45px -12px rgba(197, 155, 39, 0.22);
+  border-color: var(--plum-soft);
+  box-shadow: 0 25px 45px -12px rgba(56, 25, 50, 0.15);
 }
 
 .service-card:hover::after {
@@ -83,7 +84,7 @@
   height: 220px;
   overflow: hidden;
   position: relative;
-  background: var(--color-surface-alt);
+  background: var(--cream);
 }
 
 .service-img img {
@@ -111,12 +112,12 @@
   font-weight: 700;
   margin-bottom: 1rem;
   line-height: 1.3;
-  color: var(--color-primary);
+  color: var(--plum);
   transition: var(--transition-smooth);
 }
 
 .service-card:hover .service-title {
-  color: var(--color-gold);
+  color: var(--plum-light);
 }
 
 .service-desc {
@@ -140,4 +141,3 @@
     grid-template-columns: 1fr;
   }
 }
-

@@ -1,7 +1,7 @@
 .stats-section {
   padding: 3.5rem 0;
-  background: linear-gradient(180deg, #FFFFFF 0%, var(--color-surface-alt) 100%);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  background: linear-gradient(180deg, #E3E0CE 0%, #ECE9D9 50%, #F7F5EB 100%);
+  border-bottom: none;
   position: relative;
   z-index: 20;
 }
@@ -19,10 +19,10 @@
   align-items: center;
   gap: 1.5rem;
   padding: 1.5rem 2.5rem;
-  background: #FFFFFF;
+  background: var(--white);
   border-radius: var(--border-radius-md);
-  border: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05);
+  border: 1px solid rgba(56, 25, 50, 0.08);
+  box-shadow: 0 10px 25px -5px rgba(56, 25, 50, 0.05);
   transition: var(--transition-bounce);
   cursor: pointer;
   flex: 1;
@@ -31,20 +31,20 @@
 
 .stat-item:hover {
   transform: translateY(-8px) scale(1.02);
-  border-color: var(--color-gold);
-  box-shadow: 0 20px 35px -10px rgba(212, 175, 55, 0.25);
+  border-color: var(--plum-soft);
+  box-shadow: 0 20px 35px -10px rgba(56, 25, 50, 0.15);
 }
 
 .stat-icon {
-  color: var(--color-gold);
+  color: var(--plum-soft);
   padding: 10px;
-  background: rgba(212, 175, 55, 0.12);
+  background: rgba(138, 90, 126, 0.12);
   border-radius: 14px;
   transition: var(--transition-smooth);
 }
 
 .stat-item:hover .stat-icon {
-  background: var(--color-primary);
+  background: var(--plum);
   color: #FFFFFF;
   transform: rotate(10deg) scale(1.1);
 }
@@ -55,11 +55,12 @@
 }
 
 .stat-number {
-  font-size: 2.6rem;
-  font-weight: 800;
-  line-height: 1.1;
-  color: var(--color-primary);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--plum);
   font-family: var(--font-heading);
+  margin-bottom: 3px;
 }
 
 .stat-label {
@@ -84,4 +85,3 @@
     font-size: 2.2rem;
   }
 }
-

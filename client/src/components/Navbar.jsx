@@ -33,19 +33,15 @@ const Navbar = () => {
         <div className="container topbar-container">
           <div className="topbar-left">
             <span className="topbar-item">
-              <MapPin size={14} className="text-gold" />
-              Dubai Creek Tower - Deira-Riggat Al Buteen
+              <MapPin size={14} className="text-cream" />
+              Dubai Creek Tower - Riggat Al Buteen
             </span>
             <span className="topbar-item">
-              <Mail size={14} className="text-gold" />
+              <Mail size={14} className="text-cream" />
               info@jasync.com
             </span>
           </div>
           <div className="topbar-right">
-            <span className="topbar-item">
-              <Clock size={14} className="text-gold" />
-              Office Hours: 9:00 AM - 06:00 PM
-            </span>
             <div className="topbar-socials">
               <a href="https://www.facebook.com/profile.php?id=61592002726358" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Facebook">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -78,7 +74,7 @@ const Navbar = () => {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container nav-container">
           <Link to="/" className="logo" onClick={closeMobileMenu}>
-            <img src="/logo.jpg" alt="THE JASYNC Logo" className="brand-logo" />
+            <img src="/jasync-logo-light-bg.svg?v=3" alt="THE JASYNC Logo" className="brand-logo" />
             <div className="logo-text">
               THE JASYNC
             </div>
@@ -127,16 +123,6 @@ const Navbar = () => {
               </div>
             </li>
           </ul>
-
-          <div className="nav-contact">
-            <div className="nav-contact-icon">
-              <PhoneCall size={20} />
-            </div>
-            <div>
-              <span className="nav-contact-label">Call us today</span>
-              <span className="nav-contact-number">+971 54 740 5625</span>
-            </div>
-          </div>
         </div>
       </nav>
     </div>

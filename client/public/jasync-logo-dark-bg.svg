@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" width="60" height="60">
+  <!-- Monogram Mark for Dark Backgrounds -->
+  <rect width="60" height="60" rx="15" fill="#5A2D50" stroke="rgba(255,243,230,0.3)" stroke-width="1.5"/>
+  <path d="M29 12 L37 12 L37 34 C37 41 31 47 23 47 C17 47 13 43 13 38 C13 34 16 32 19 32 C22 32 24 34 24 37 C24 40 22 41 20 41 C22 43 25 43 28 41 C30 39 30 36 30 33 L30 20 L22 20 L22 12 Z" fill="#FFF3E6"/>
+  <circle cx="42" cy="15" r="4" fill="#FFF3E6"/>
+  <path d="M42 22 L42 38 C42 41 44 44 47 44 C49 44 50 43 52 42 L52 47 C50 48 47 49 44 49 C38 49 36 44 36 39 L36 22 Z" fill="#FFF3E6" opacity="0.9"/>
+  <path d="M16 49 C26 53 40 52 51 45" stroke="#FFF3E6" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.75"/>
+</svg>

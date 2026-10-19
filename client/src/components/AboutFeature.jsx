@@ -1,89 +1,104 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { CheckCircle2, ArrowLeft, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight } from 'lucide-react';
 import './AboutFeature.css';
 
 const AboutFeature = () => {
   const [currentImage, setCurrentImage] = React.useState(0);
+
+  // =========================================================================
+  // SHOWCASE IMAGES (Auto-scrolling Slideshow)
+  // CHANGE IMAGES HERE: Replace image paths below
+  // =========================================================================
   const images = [
-    "/corporate_team_1.png",
-    "/corporate_team_2.png",
-    "/corporate_team_3.png"
+    "/about_1.jpg", // Image 1 (About us 1)
+    "/about_2.jpg", // Image 2 (About us 2)
+    "/about_3.jpg"  // Image 3 (About us 3)
   ];
 
-  const handlePrev = () => {
-    setCurrentImage((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-  };
+  // Automatic Smooth Image Scroll / Slideshow every 4 seconds
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [images.length]);
 
   return (
     <section className="about-section section-padding">
-      <div className="container about-container">
+      <div className="container">
         
-        {/* Left Side: Images & Stats Box */}
-        <div className="about-left" data-aos="fade-right">
-          <div className="about-image-main">
-            <img src={images[currentImage]} alt="Engineering Team" style={{ transition: 'opacity 0.3s ease-in-out' }} />
-          </div>
-          <div className="about-image-secondary" data-aos="zoom-in" data-aos-delay="300">
-            <img src={images[(currentImage + 1) % images.length]} alt="Team Discussion" style={{ transition: 'opacity 0.3s ease-in-out' }} />
-          </div>
-          
-          <div className="stats-box" data-aos="fade-up" data-aos-delay="500">
-            <h3>1M+</h3>
-            <p>Overall happy<br/>Customers</p>
-          </div>
-          
-          {/* Decorative Arrows */}
-          <div className="about-arrows">
-            <div className="arrow-circle" onClick={handlePrev}><ArrowLeft size={20} /></div>
-            <div className="arrow-circle" onClick={handleNext}><ArrowRight size={20} /></div>
-          </div>
+        {/* Centered Section Header */}
+        <div className="about-header" data-aos="fade-up">
+          <Link 
+            to="/about" 
+            className="section-label" 
+            onClick={() => window.scrollTo(0, 0)}
+          >
+            About Our Company
+          </Link>
         </div>
 
-        {/* Right Side: Content */}
-        <div className="about-right" data-aos="fade-left" data-aos-delay="200">
-          <Link to="/about" className="section-label" style={{ display: 'inline-block', textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>About Us</Link>
-          <h2>Scaling Engineering Teams for Growing IT Companies</h2>
-          <p className="text-light">
-            Helping IT companies scale faster with expert engineering talent and flexible development support. 
-            Our team works closely with clients to design customized solutions aligned with their business goals.
-          </p>
-
-          <ul className="feature-list">
-            <li>
-              <CheckCircle2 className="check-icon" size={24} />
-              <span>Tailored Recruitment Solutions</span>
-            </li>
-            <li>
-              <CheckCircle2 className="check-icon" size={24} />
-              <span>Dedicated Industry Experts</span>
-            </li>
-            <li>
-              <CheckCircle2 className="check-icon" size={24} />
-              <span>Rapid Team Scaling & Deployment</span>
-            </li>
-          </ul>
-
-          <div className="awards-container">
-            <div className="award-item">
-              <div className="award-icon">🏆</div>
-              <div>
-                <h4>Certified Company</h4>
-                <p>Trusted and certified for delivering quality IT solutions.</p>
-              </div>
-            </div>
-            <div className="award-item">
-              <div className="award-icon">🏅</div>
-              <div>
-                <h4>Award Ceremony</h4>
-                <p>Proud recipient of industry awards for innovation and excellence.</p>
+        {/* Dual Cards Grid (Equal Alignment & Height) */}
+        <div className="about-cards-grid">
+          
+          {/* Left Card: Automatic Scrolling Image Showcase Card */}
+          <div className="about-card about-card-left" data-aos="fade-right">
+            <div className="about-card-img-wrap">
+              {images.map((imgSrc, idx) => (
+                <img 
+                  key={idx}
+                  src={imgSrc} 
+                  alt={`TheJaySync Showcase ${idx + 1}`} 
+                  className={`about-card-img ${idx === currentImage ? 'active' : ''}`}
+                />
+              ))}
+              <div className="about-card-img-overlay"></div>
+              
+              {/* Company Badge (Updated for TheJaySync) */}
+              <div className="about-card-badge">
+                <h3>THE JASYNC</h3>
+                <p>Specialized IT &amp;<br/>Digital Marketing Recruitment</p>
               </div>
             </div>
           </div>
+
+          {/* Right Card: Content Card */}
+          <div className="about-card about-card-right" data-aos="fade-left" data-aos-delay="150">
+            <div className="about-card-body">
+              <h2>Connecting Specialized Tech &amp; Marketing Talent with Industry Leaders</h2>
+              
+              <p className="text-light">
+                We bridge the gap between elite software engineers, web developers, and performance marketers with top organizations across the UAE and worldwide. Our tailored recruitment approach ensures exceptional technical talent and culture fit for fast-moving teams.
+              </p>
+
+              <ul className="feature-list">
+                <li>
+                  <CheckCircle2 className="check-icon" size={20} />
+                  <span>Rigorous Technical &amp; Coding Screening (Python, React, Cloud)</span>
+                </li>
+                <li>
+                  <CheckCircle2 className="check-icon" size={20} />
+                  <span>Vetted Performance Marketers, SEO &amp; Growth Strategists</span>
+                </li>
+                <li>
+                  <CheckCircle2 className="check-icon" size={20} />
+                  <span>Tailored Sourcing for Contract, Permanent &amp; Remote Teams</span>
+                </li>
+              </ul>
+
+              <div className="about-card-action">
+                <Link 
+                  to="/about" 
+                  className="btn btn-primary read-more-btn" 
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  Read More <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>

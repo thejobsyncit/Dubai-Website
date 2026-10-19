@@ -1,19 +1,20 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import Stats from '../components/Stats';
+import RecruitmentCategories from '../components/RecruitmentCategories';
 import AboutFeature from '../components/AboutFeature';
-import ServicesCards from '../components/ServicesCards';
+import WhyChooseUs from '../components/WhyChooseUs';
+import BlogSection from '../components/BlogSection';
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <Stats />
+      <RecruitmentCategories />
       <AboutFeature />
-      <ServicesCards />
+      <WhyChooseUs />
+      <BlogSection />
     </>
   );
 };
 
 export default Home;
-

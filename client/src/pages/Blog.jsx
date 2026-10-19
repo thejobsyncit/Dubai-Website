@@ -5,37 +5,37 @@ import './Page.css';
 const Blog = () => {
   const posts = [
     {
-      title: "The Future of Cloud Computing in 2026",
-      date: "July 15, 2026",
-      excerpt: "Explore how serverless architectures and multi-cloud strategies are reshaping enterprise IT.",
-      category: "Cloud",
+      title: "Hiring Python & React Developers: What Modern Tech Teams Prioritize",
+      date: "October 14, 2026",
+      excerpt: "Essential technical evaluation criteria, coding assessments, and hiring trends for recruiting skilled Python and React engineers.",
+      category: "IT Recruitment",
       img: "/real_blog_1.jpg"
     },
     {
-      title: "Cybersecurity Threats You Must Ignore At Your Peril",
-      date: "July 02, 2026",
-      excerpt: "A deep dive into zero-trust networks and the rising importance of AI in threat detection.",
-      category: "Security",
+      title: "Performance Marketing vs. SEO: Structuring a High-ROI Growth Team",
+      date: "October 02, 2026",
+      excerpt: "How growing companies balance paid media specialists and organic SEO leaders to build cohesive, revenue-generating marketing teams.",
+      category: "Digital Marketing",
       img: "/real_blog_2.jpg"
     },
     {
-      title: "Scaling Engineering Teams: A Practical Guide",
-      date: "June 20, 2026",
-      excerpt: "How to effectively manage and scale distributed teams while maintaining high code quality.",
-      category: "Management",
+      title: "Cross-Border Tech Sourcing: Securing Top Full-Stack Engineers in the UAE",
+      date: "September 24, 2026",
+      excerpt: "Insights on how technology companies in Dubai and the GCC are overcoming local talent shortages through distributed engineering recruitment.",
+      category: "Talent Acquisition",
       img: "/real_blog_3.jpg"
     }
   ];
 
   return (
     <div className="page-wrapper">
-      <div className="page-header bg-primary text-white">
+      <div className="page-header">
         <div className="container" style={{ textAlign: 'center' }}>
-          <h1>Our Blog</h1>
+          <h1>Recruitment Insights &amp; Industry Trends</h1>
           <div className="breadcrumb" style={{ fontSize: '1rem', marginTop: '15px', marginBottom: '15px' }}>
-            <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link> <span style={{ margin: '0 10px' }}>/</span> <span style={{ opacity: 0.8 }}>Blog</span>
+            <Link to="/" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Home</Link> <span style={{ margin: '0 10px' }}>/</span> <span style={{ opacity: 0.85 }}>Blog</span>
           </div>
-          <p>Insights, news, and trends from the world of enterprise IT.</p>
+          <p>Expert articles and market perspectives on IT engineering hiring and digital marketing growth.</p>
         </div>
       </div>
       
@@ -46,7 +46,7 @@ const Blog = () => {
               <div key={i} className="blog-card" data-aos="fade-up" data-aos-delay={i * 150}>
                 <img src={post.img} alt={post.title} className="blog-card-img" />
                 <div className="blog-card-content">
-                  <span className="blog-category">{post.category}</span>
+                  <span className="blog-category" style={{ background: 'var(--peach)', color: 'var(--orange-hover)' }}>{post.category}</span>
                   <h3>{post.title}</h3>
                   <p className="blog-excerpt">{post.excerpt}</p>
                   <div className="blog-date">{post.date}</div>
