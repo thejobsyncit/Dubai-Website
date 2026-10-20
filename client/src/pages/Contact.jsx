@@ -1,169 +1,223 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Mail, PhoneCall, MapPin, Send, Briefcase, UserCheck } from 'lucide-react';
+import { MapPin, Mail, ArrowRight, CheckCircle2, Lock } from 'lucide-react';
 import './Page.css';
 
 const Contact = () => {
-  const [formType, setFormType] = useState('employer'); // 'employer' | 'candidate'
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+    acceptedTerms: false
+  });
   const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        acceptedTerms: false
+      });
+    }, 5000);
   };
 
   return (
     <div className="contact-page page-wrapper">
-      <div className="page-header">
-        <div className="container" style={{ textAlign: 'center' }}>
-          <h1>Connect With THE JASYNC</h1>
-          <div className="breadcrumb" style={{ fontSize: '1rem', marginTop: '15px', marginBottom: '15px' }}>
-            <Link to="/" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Home</Link> <span style={{ margin: '0 10px' }}>/</span> <span style={{ opacity: 0.85 }}>Contact Us</span>
+      {/* Header Banner (Matches Reference Structure with Brand Amber/Plum) */}
+      <div className="page-header contact-page-header">
+        <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 3 }}>
+          <div className="header-pill-badge" data-aos="fade-down">
+            GET IN TOUCH
           </div>
-          <p>Whether you are hiring specialized talent or exploring your next career milestone, our team is ready to assist you.</p>
+          <h1 data-aos="fade-up">
+            Contact <span className="header-highlight">Us</span>
+          </h1>
+          <p data-aos="fade-up" data-aos-delay="100">
+            Have questions or a project in mind? Reach out to our global teams in Dubai and Chennai.
+          </p>
+        </div>
+
+        {/* Crisp Wave Divider */}
+        <div className="page-header-curve">
+          <svg viewBox="0 0 1440 90" fill="none" preserveAspectRatio="none">
+            <path 
+              d="M0,45 C380,95 720,18 1080,58 C1260,78 1380,48 1440,38 L1440,90 L0,90 Z" 
+              fill="var(--cream)" 
+            />
+          </svg>
         </div>
       </div>
       
-      <div className="container page-content">
-        <div className="content-box" style={{ maxWidth: '880px', margin: '-3rem auto 0', padding: '3.5rem 3rem' }}>
-          
-          {/* Dual Toggle for Employers and Candidates */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '12px', marginBottom: '2.5rem' }}>
-            <button
-              type="button"
-              onClick={() => setFormType('employer')}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '0.75rem 1.75rem',
-                borderRadius: '50px',
-                border: formType === 'employer' ? '2px solid var(--orange)' : '1px solid var(--cream-dark)',
-                background: formType === 'employer' ? 'var(--orange)' : 'var(--white)',
-                color: formType === 'employer' ? 'var(--white)' : 'var(--plum)',
-                fontWeight: '700',
-                cursor: 'pointer',
-                fontSize: '0.95rem',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              <Briefcase size={18} /> I Want to Hire Talent
-            </button>
-            <button
-              type="button"
-              onClick={() => setFormType('candidate')}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '0.75rem 1.75rem',
-                borderRadius: '50px',
-                border: formType === 'candidate' ? '2px solid var(--orange)' : '1px solid var(--cream-dark)',
-                background: formType === 'candidate' ? 'var(--orange)' : 'var(--white)',
-                color: formType === 'candidate' ? 'var(--white)' : 'var(--plum)',
-                fontWeight: '700',
-                cursor: 'pointer',
-                fontSize: '0.95rem',
-                transition: 'all 0.2s ease'
-              }}
-            >
-              <UserCheck size={18} /> I Want to Submit My Resume
-            </button>
-          </div>
-
-          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <h2>{formType === 'employer' ? 'Request IT & Marketing Talent' : 'Submit Your Resume & Profile'}</h2>
-            <p style={{ color: 'var(--color-text-muted)' }}>
-              {formType === 'employer' 
-                ? 'Tell us about the software engineering, Python, React, web development or marketing talent you need.'
-                : 'Share your background in software engineering, web development, SEO, performance marketing or content strategy.'
-              }
-            </p>
-          </div>
-
-          {submitted ? (
-            <div style={{ padding: '2rem', background: 'var(--white)', borderRadius: '16px', border: '1px solid var(--orange)', textAlign: 'center', color: 'var(--plum)' }}>
-              <h3 style={{ marginBottom: '8px', color: 'var(--orange-hover)' }}>Thank you for reaching out!</h3>
-              <p style={{ margin: 0, color: 'var(--color-text-muted)' }}>Our recruitment team will review your submission and contact you shortly.</p>
-            </div>
-          ) : (
-            <form style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '22px' }} onSubmit={handleSubmit}>
-              <div style={{ gridColumn: 'span 1' }}>
-                <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600', color: 'var(--plum)' }}>Full Name</label>
-                <input type="text" placeholder="Your Name" className="form-input" required />
-              </div>
-
-              <div style={{ gridColumn: 'span 1' }}>
-                <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600', color: 'var(--plum)' }}>Email Address</label>
-                <input type="email" placeholder="name@domain.com" className="form-input" required />
-              </div>
-
-              <div style={{ gridColumn: 'span 1' }}>
-                <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600', color: 'var(--plum)' }}>Phone / WhatsApp</label>
-                <input type="tel" placeholder="+971 54 000 0000" className="form-input" required />
-              </div>
-
-              <div style={{ gridColumn: 'span 1' }}>
-                <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600', color: 'var(--plum)' }}>
-                  {formType === 'employer' ? 'Target Hiring Discipline' : 'Primary Specialization'}
-                </label>
-                <select className="form-input" required defaultValue="">
-                  <option value="" disabled>Select specialization</option>
-                  <option value="python">Python &amp; Backend Engineering</option>
-                  <option value="react">React &amp; Frontend Development</option>
-                  <option value="fullstack">Full-Stack &amp; Web Development</option>
-                  <option value="seo">SEO &amp; Content Marketing</option>
-                  <option value="performance">Performance &amp; Paid Media Marketing</option>
-                  <option value="social">Social Media &amp; Community</option>
-                  <option value="cloud">Cloud &amp; DevOps Engineering</option>
-                  <option value="other">Other Technical / Marketing Role</option>
-                </select>
-              </div>
-
-              {formType === 'candidate' && (
-                <div style={{ gridColumn: 'span 2' }}>
-                  <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600', color: 'var(--plum)' }}>LinkedIn or Portfolio / GitHub URL</label>
-                  <input type="url" placeholder="https://linkedin.com/in/... or https://github.com/..." className="form-input" />
+      {/* Main Content: Two-Column Connect & Form Layout */}
+      <div className="contact-section-wrapper">
+        <div className="container">
+          <div className="contact-layout-grid">
+            
+            {/* Left Column: Connect with us */}
+            <div className="contact-info-col" data-aos="fade-up" data-aos-delay="100">
+              <h2>Connect with us</h2>
+              
+              <div className="contact-items-list">
+                {/* Dubai Office */}
+                <div className="contact-info-item">
+                  <div className="contact-icon-squircle">
+                    <MapPin size={24} />
+                  </div>
+                  <div className="contact-details">
+                    <h3>Dubai Office</h3>
+                    <p>Dubai Creek Tower - 1st St - Riggat Al Buteen</p>
+                    <a href="tel:+971547405625">+971 54 740 5625</a>
+                  </div>
                 </div>
+
+                {/* India Office */}
+                <div className="contact-info-item">
+                  <div className="contact-icon-squircle">
+                    <MapPin size={24} />
+                  </div>
+                  <div className="contact-details">
+                    <h3>India Office</h3>
+                    <p>Tamilnadu, Chennai</p>
+                    <a href="tel:+919789569391">+91 9789569391</a>
+                  </div>
+                </div>
+
+                {/* Mail Id */}
+                <div className="contact-info-item">
+                  <div className="contact-icon-squircle">
+                    <Mail size={24} />
+                  </div>
+                  <div className="contact-details">
+                    <h3>Mail Id</h3>
+                    <a href="mailto:info@jasync.com">info@jasync.com</a>
+                    <a href="mailto:hr@thejobsync.com">hr@thejobsync.com</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Contact Form Card */}
+            <div className="contact-form-card" data-aos="fade-up" data-aos-delay="200">
+              {submitted ? (
+                <div style={{ padding: '3.5rem 2rem', textAlign: 'center' }}>
+                  <div style={{ 
+                    width: '64px', 
+                    height: '64px', 
+                    borderRadius: '50%', 
+                    background: 'linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%)', 
+                    color: '#1A1D36', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    margin: '0 auto 1.5rem',
+                    boxShadow: '0 8px 20px rgba(245, 158, 11, 0.35)'
+                  }}>
+                    <CheckCircle2 size={34} />
+                  </div>
+                  <h3 style={{ fontSize: '1.8rem', color: 'var(--plum)', marginBottom: '0.8rem', fontWeight: 800 }}>
+                    Message Received!
+                  </h3>
+                  <p style={{ color: 'var(--color-text-muted)', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: '440px', margin: '0 auto' }}>
+                    Thank you for reaching out. Our recruitment and project advisors will get in touch with you shortly.
+                  </p>
+                </div>
+              ) : (
+                <form className="contact-form-grid" onSubmit={handleSubmit}>
+                  {/* Row 1: Your Name & Email Address */}
+                  <div className="form-row-dual">
+                    <div>
+                      <input 
+                        type="text" 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Your Name *" 
+                        className="contact-input-field" 
+                        required 
+                      />
+                    </div>
+                    <div>
+                      <input 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Email Address *" 
+                        className="contact-input-field" 
+                        required 
+                      />
+                    </div>
+                  </div>
+
+                  {/* Row 2: Phone Number */}
+                  <div>
+                    <input 
+                      type="tel" 
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="Phone Number (e.g. +971 54 740 5625)" 
+                      className="contact-input-field" 
+                    />
+                  </div>
+
+                  {/* Row 3: Tell Us About Project */}
+                  <div>
+                    <textarea 
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      placeholder="Tell Us About Project *" 
+                      rows="5" 
+                      className="contact-input-field" 
+                      required
+                      style={{ resize: 'vertical' }}
+                    ></textarea>
+                  </div>
+
+                  {/* Row 4: Terms Checkbox */}
+                  <label className="contact-terms-row">
+                    <input 
+                      type="checkbox" 
+                      name="acceptedTerms"
+                      checked={formData.acceptedTerms}
+                      onChange={handleChange}
+                      required 
+                    />
+                    <span>I accept your Terms &amp; Conditions</span>
+                  </label>
+
+                  {/* Row 5: Modern Action Button */}
+                  <div className="contact-btn-wrapper">
+                    <button type="submit" className="contact-submit-btn">
+                      <span>Send Message</span>
+                      <span className="btn-icon-bubble">
+                        <ArrowRight size={17} />
+                      </span>
+                    </button>
+                    <span className="contact-btn-note">
+                      <Lock size={14} style={{ color: 'var(--orange)' }} />
+                      Guaranteed response within 24 hours
+                    </span>
+                  </div>
+                </form>
               )}
+            </div>
 
-              <div style={{ gridColumn: 'span 2' }}>
-                <label style={{ display: 'block', marginBottom: '8px', fontWeight: '600', color: 'var(--plum)' }}>
-                  {formType === 'employer' ? 'Role Requirements & Hiring Timeline' : 'Career Summary & Preferred Roles'}
-                </label>
-                <textarea 
-                  placeholder={formType === 'employer' ? 'Describe the tech stack, seniority, timeline, and whether you prefer onsite UAE or remote...' : 'Describe your tech stack, years of experience, current location, and role preferences...'} 
-                  rows="4" 
-                  className="form-input" 
-                  required
-                ></textarea>
-              </div>
-
-              <div style={{ gridColumn: 'span 2', textAlign: 'center', marginTop: '6px' }}>
-                <button type="submit" className="btn btn-orange" style={{ width: '100%', padding: '1rem', fontSize: '1.05rem', justifyContent: 'center' }}>
-                  <Send size={18} /> {formType === 'employer' ? 'Submit Hiring Inquiry' : 'Submit Resume & Profile'}
-                </button>
-              </div>
-            </form>
-          )}
-          
-          <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap', gap: '20px', marginTop: '3.5rem', paddingTop: '2.5rem', borderTop: '1px solid var(--cream-dark)', textAlign: 'center' }}>
-            <div>
-              <PhoneCall size={24} className="text-orange" style={{ margin: '0 auto 10px' }} />
-              <h4 style={{ color: 'var(--plum)', marginBottom: '4px' }}>Direct Phone</h4>
-              <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)' }}>+971 54 740 5625</p>
-            </div>
-            <div>
-              <Mail size={24} className="text-orange" style={{ margin: '0 auto 10px' }} />
-              <h4 style={{ color: 'var(--plum)', marginBottom: '4px' }}>Recruitment Email</h4>
-              <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)' }}>info@jasync.com</p>
-            </div>
-            <div>
-              <MapPin size={24} className="text-orange" style={{ margin: '0 auto 10px' }} />
-              <h4 style={{ color: 'var(--plum)', marginBottom: '4px' }}>Dubai Headquarters</h4>
-              <p style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)' }}>Dubai Creek Tower, Deira</p>
-            </div>
           </div>
         </div>
       </div>

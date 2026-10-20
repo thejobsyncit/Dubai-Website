@@ -35,18 +35,32 @@ const FAQ = () => {
 
   return (
     <div className="page-wrapper">
-      <div className="page-header">
-        <div className="container" style={{ textAlign: 'center' }}>
-          <h1>Frequently Asked Questions</h1>
-          <div className="breadcrumb" style={{ fontSize: '1rem', marginTop: '15px', marginBottom: '15px' }}>
-            <Link to="/" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Home</Link> <span style={{ margin: '0 10px' }}>/</span> <span style={{ opacity: 0.85 }}>FAQ</span>
+      <div className="page-header faq-page-header">
+        <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 3 }}>
+          <div className="header-pill-badge" data-aos="fade-down">
+            HELP &amp; SUPPORT
           </div>
-          <p>Find answers to common questions about our IT and digital marketing recruitment solutions.</p>
+          <h1 data-aos="fade-up">
+            Frequently Asked <span className="header-highlight">Questions</span>
+          </h1>
+          <p data-aos="fade-up" data-aos-delay="100">
+            Find answers to common questions about our IT and digital marketing recruitment solutions.
+          </p>
+        </div>
+
+        {/* Crisp Single-Layer Fluid Wave Divider */}
+        <div className="page-header-curve">
+          <svg viewBox="0 0 1440 90" fill="none" preserveAspectRatio="none">
+            <path 
+              d="M0,45 C380,95 720,18 1080,58 C1260,78 1380,48 1440,38 L1440,90 L0,90 Z" 
+              fill="var(--cream)" 
+            />
+          </svg>
         </div>
       </div>
       
-      <div className="container page-content">
-        <div className="content-box" style={{ maxWidth: '850px', margin: '-3rem auto 0', padding: '3.5rem 3rem' }}>
+      <div className="container page-content" style={{ paddingTop: '3rem' }}>
+        <div className="content-box" style={{ maxWidth: '850px', margin: '0 auto 0', padding: '3.5rem 3rem', borderRadius: '24px' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', background: 'var(--peach)', border: '1px solid rgba(240, 120, 36, 0.25)', borderRadius: '50px', color: 'var(--orange-hover)', fontWeight: '700', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '15px' }}>
               <HelpCircle size={16} /> Recruitment Knowledge Base

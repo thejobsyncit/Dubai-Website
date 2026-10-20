@@ -28,15 +28,10 @@ const AboutFeature = () => {
     <section className="about-section section-padding">
       <div className="container">
         
-        {/* Centered Section Header */}
+        {/* Centered Section Header (Matches Reference Image 1) */}
         <div className="about-header" data-aos="fade-up">
-          <Link 
-            to="/about" 
-            className="section-label" 
-            onClick={() => window.scrollTo(0, 0)}
-          >
-            About Our Company
-          </Link>
+          <h2>About Our Company</h2>
+          <div className="about-header-line"></div>
         </div>
 
         {/* Dual Cards Grid (Equal Alignment & Height) */}
@@ -66,16 +61,17 @@ const AboutFeature = () => {
           {/* Right Card: Content Card */}
           <div className="about-card about-card-right" data-aos="fade-left" data-aos-delay="150">
             <div className="about-card-body">
+              <span className="about-card-pill">ABOUT THE JASYNC</span>
               <h2>Connecting Specialized Tech &amp; Marketing Talent with Industry Leaders</h2>
               
               <p className="text-light">
-                We bridge the gap between elite software engineers, web developers, and performance marketers with top organizations across the UAE and worldwide. Our tailored recruitment approach ensures exceptional technical talent and culture fit for fast-moving teams.
+                Headquartered at Dubai Creek Tower, THE JASYNC bridges the gap between elite software engineers, web developers, and performance marketers with top organizations across the UAE and worldwide. Our tailored recruitment approach ensures exceptional technical talent and culture fit for fast-moving teams.
               </p>
 
               <ul className="feature-list">
                 <li>
                   <CheckCircle2 className="check-icon" size={20} />
-                  <span>Rigorous Technical &amp; Coding Screening (Python, React, Cloud)</span>
+                  <span>Rigorous Technical &amp; Coding Screening (Python, React, Cloud DevOps)</span>
                 </li>
                 <li>
                   <CheckCircle2 className="check-icon" size={20} />
@@ -83,19 +79,9 @@ const AboutFeature = () => {
                 </li>
                 <li>
                   <CheckCircle2 className="check-icon" size={20} />
-                  <span>Tailored Sourcing for Contract, Permanent &amp; Remote Teams</span>
+                  <span>Tailored Sourcing for Contract, Permanent &amp; Distributed Remote Teams</span>
                 </li>
               </ul>
-
-              <div className="about-card-action">
-                <Link 
-                  to="/about" 
-                  className="btn btn-primary read-more-btn" 
-                  onClick={() => window.scrollTo(0, 0)}
-                >
-                  Read More <ArrowRight size={18} />
-                </Link>
-              </div>
             </div>
           </div>
 

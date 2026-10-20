@@ -11,11 +11,11 @@
 
 /* Top Bar */
 .topbar {
-  background: var(--plum);
+  background: linear-gradient(90deg, #131527 0%, #222544 50%, #363B6B 100%);
   color: #FFFFFF;
   font-size: 0.82rem;
   padding: 0.35rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   font-weight: 500;
 }
 

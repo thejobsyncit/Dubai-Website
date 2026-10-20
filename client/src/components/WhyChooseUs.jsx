@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import { Award, Users, TrendingUp, ArrowRight } from 'lucide-react';
 import './WhyChooseUs.css';
 
-const WhyChooseUs = () => {
+const WhyChooseUs = ({
+  label = "Why Choose Us",
+  title = "Engineered for High-Growth Tech & Marketing Teams",
+  subtitle = "We combine rigorous technical screening, rapid turnaround times, and verified candidate quality to help you build high-performing teams with complete confidence."
+}) => {
   const pillars = [
     {
       num: "01",
@@ -46,11 +50,9 @@ const WhyChooseUs = () => {
         
         {/* Section Header */}
         <div className="why-header text-center" data-aos="fade-up">
-          <span className="section-label">Why Choose Us</span>
-          <h2>Engineered for High-Growth Tech &amp; Marketing Teams</h2>
-          <p className="why-subhead">
-            We combine rigorous technical screening, rapid turnaround times, and verified candidate quality to help you build high-performing teams with complete confidence.
-          </p>
+          <span className="section-label">{label}</span>
+          <h2>{title}</h2>
+          <p className="why-subhead">{subtitle}</p>
         </div>
 
         {/* 3 + 2 Cards Layout with Numbers */}

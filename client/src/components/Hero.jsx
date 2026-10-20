@@ -6,7 +6,7 @@ import './Hero.css';
 const Hero = () => {
   return (
     <section className="hero-section">
-      <img src="/dubai_night.jpg" alt="Dubai Burj Khalifa Sunset Skyline" className="hero-bg-img" />
+      <img src="/Modern_Dubai_waterfront_skyline.jpg" alt="Modern Dubai Waterfront Skyline" className="hero-bg-img" />
       <div className="hero-bg-overlay"></div>
       
       <div className="container hero-container">
@@ -34,21 +34,20 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Elegant Curved Divider at the end of the image */}
-      <div className="hero-bottom-curve">
-        <svg 
-          viewBox="0 0 1440 100" 
-          fill="none" 
-          xmlns="http://www.w3.org/2000/svg" 
-          preserveAspectRatio="none"
-        >
-          <path 
-            d="M0,30 C360,90 720,10 1080,60 C1260,85 1380,50 1440,40 L1440,100 L0,100 Z" 
-            fill="rgba(247, 245, 235, 0.45)"
+      {/* Bottom curved shape divider merging Hero into next section */}
+      <div className="hero-shape-divider" aria-hidden="true">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none">
+          <path
+            d="M0,32 C280,72 540,10 880,48 C1160,80 1340,32 1440,45 L1440,90 L0,90 Z"
+            fill="rgba(250, 248, 245, 0.4)"
           />
-          <path 
-            d="M0,55 C320,105 680,35 1040,80 C1240,105 1360,75 1440,65 L1440,100 L0,100 Z" 
-            fill="#F7F5EB"
+          <path
+            d="M0,48 C320,18 600,62 940,28 C1180,58 1350,30 1440,38 L1440,90 L0,90 Z"
+            fill="rgba(251, 191, 36, 0.18)"
+          />
+          <path
+            d="M0,58 C380,18 720,70 1060,32 C1260,10 1390,40 1440,44 L1440,90 L0,90 Z"
+            fill="#FAF8F5"
           />
         </svg>
       </div>

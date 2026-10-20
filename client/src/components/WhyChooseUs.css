@@ -1,5 +1,5 @@
 .why-section {
-  background: linear-gradient(180deg, #F5F2E4 0%, #FFFFFF 180px, #FFFFFF calc(100% - 180px), #F5F2E4 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F4 180px, #FAF8F4 calc(100% - 180px), #FFFFFF 100%);
   padding: 6.5rem 0 7rem;
   position: relative;
   border-top: none;
@@ -64,26 +64,26 @@
   width: calc((100% - 48px) / 3); /* Exactly matches row 1 card width */
 }
 
-/* Card Styling: Warm ivory card on pure white section background */
+/* Card Styling: Crisp white card on light luxury section background */
 .why-feature-card {
-  background: #F7F5EC;
+  background: var(--white);
   border-radius: 20px;
   padding: 2.2rem 2rem 2rem;
-  box-shadow: 0 10px 25px -5px rgba(40, 43, 74, 0.05);
+  box-shadow: 0 10px 30px -10px rgba(40, 43, 74, 0.07);
   border: 1px solid var(--cream-dark);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 250px;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
   position: relative;
 }
 
 .why-feature-card:hover {
   transform: translateY(-6px);
-  background: #EFEBD9;
-  border-color: var(--plum-soft);
-  box-shadow: 0 16px 36px -8px rgba(40, 43, 74, 0.12);
+  background: var(--white);
+  border-color: var(--orange);
+  box-shadow: 0 18px 40px -10px rgba(40, 43, 74, 0.14);
 }
 
 /* Card Header: Number on Left, Pill Badge on Right */
@@ -105,12 +105,12 @@
 }
 
 .why-feature-card:hover .card-num {
-  color: var(--plum-light);
+  color: var(--orange);
   transform: scale(1.06);
 }
 
 .card-badge {
-  background: var(--white);
+  background: var(--cream-dark);
   color: var(--plum);
   border: 1px solid var(--cream-dark);
   font-size: 0.72rem;

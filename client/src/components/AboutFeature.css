@@ -1,5 +1,5 @@
 .about-section {
-  background: linear-gradient(180deg, #F5F2E4 0%, #EEEBDA 180px, #EEEBDA calc(100% - 180px), #F5F2E4 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F4 180px, #FAF8F4 calc(100% - 180px), #FFFFFF 100%);
   padding: 6rem 0;
   position: relative;
   border-top: none;
@@ -7,36 +7,42 @@
   overflow: hidden;
 }
 
-/* Centered Header with 'About Our Company' */
+/* Centered Header with 'About Our Company' (Matches Reference Image 1) */
 .about-header {
   text-align: center;
-  margin-bottom: 2.5rem;
-  display: flex;
-  justify-content: center;
+  margin-bottom: 3.5rem;
 }
 
-.about-header .section-label {
+.about-header h2 {
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: var(--plum);
+  letter-spacing: -0.5px;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.about-header-line {
+  width: 55px;
+  height: 3.5px;
+  background: linear-gradient(90deg, #FBBF24, #F59E0B);
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.about-card-pill {
   display: inline-block;
-  padding: 0.6rem 1.6rem;
-  font-size: 0.85rem;
-  font-weight: 700;
-  border-radius: 50px;
+  padding: 0.45rem 1.25rem;
   background: var(--cream-dark);
   color: var(--plum);
-  border: 1px solid var(--cream-dark);
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  box-shadow: 0 4px 12px rgba(40, 43, 74, 0.05);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.about-header .section-label:hover {
-  background: var(--plum);
-  color: #FFFFFF;
-  border-color: var(--plum);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(40, 43, 74, 0.15);
+  letter-spacing: 1.2px;
+  margin-bottom: 1.2rem;
+  align-self: flex-start;
+  box-shadow: 0 2px 8px rgba(40, 43, 74, 0.04);
 }
 
 /* Dual Cards Grid with Equal Alignment & Stretch */

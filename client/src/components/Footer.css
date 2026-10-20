@@ -1,7 +1,7 @@
 .footer {
   color: var(--white);
   padding-top: 6rem;
-  background: var(--plum);
+  background: linear-gradient(180deg, #242749 0%, #15172C 100%);
   border-top: 2px solid rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 10;

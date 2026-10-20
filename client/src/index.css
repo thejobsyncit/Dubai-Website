@@ -5,12 +5,16 @@
 --plum: #282B4A;         /* Main dark color */
 --plum-light: #3D4166;   /* Hover states and gradients */
 --plum-soft: #666A8A;    /* Icons, decorations, gradient accents */
---cream: #EEEBDA;         /* Primary ivory background */
---cream-dark: #E3E0CE;    /* Alternate sections and subtle borders */
+--plum-gradient: linear-gradient(135deg, #131527 0%, #202340 35%, #2D315A 70%, #464D8B 100%);
+--indigo-gradient: linear-gradient(135deg, #131527 0%, #202340 35%, #2D315A 70%, #464D8B 100%);
+--cream: #FCFAF7;         /* Crisp, luminous luxury pearl ivory background */
+--cream-dark: #F2EFEB;    /* Delicate soft tone for badges, subtle borders */
 --white: #FFFFFF;         /* Cards and content backgrounds */
---orange: #F07824;        /* Optional brand accent */
---orange-hover: #D96515;  /* Orange hover state */
---peach: #F5F1E4;         /* Soft ivory badge background */
+--orange: #F59E0B;        /* Primary amber/gold accent */
+--orange-light: #FBBF24;  /* Lighter amber for gradient */
+--orange-hover: #D97706;  /* Deep amber hover state */
+--orange-gradient: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+--peach: #FFFBEB;         /* Soft light amber badge background */
   /* Semantic Theme Variables */
   --color-dark-bg: var(--white);
   --color-primary: var(--plum);
@@ -261,19 +265,19 @@ button {
 }
 
 .btn-orange {
-  background: var(--orange);
-  color: #FFFFFF !important;
-  border: 1px solid var(--orange);
-  box-shadow: 0 8px 20px -4px rgba(240, 120, 36, 0.35);
+  background: var(--orange-gradient);
+  color: #1A1D36 !important;
+  border: 1px solid #F59E0B;
+  box-shadow: 0 8px 20px -4px rgba(245, 158, 11, 0.4);
   font-weight: 700;
 }
 
 .btn-orange:hover {
-  background: var(--orange-hover);
-  border-color: var(--orange-hover);
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  border-color: #D97706;
   color: #FFFFFF !important;
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 14px 28px -4px rgba(240, 120, 36, 0.5);
+  box-shadow: 0 14px 28px -4px rgba(245, 158, 11, 0.55);
 }
 
 .btn-orange-outline {
@@ -284,9 +288,10 @@ button {
 }
 
 .btn-orange-outline:hover {
-  background: var(--orange);
-  color: #FFFFFF !important;
-  transform: translateY(-3px);
+  background: var(--orange-gradient);
+  color: #1A1D36 !important;
+  border-color: #F59E0B;
+  transform: translateY(-3px) scale(1.03);
 }
 
 .section-padding {

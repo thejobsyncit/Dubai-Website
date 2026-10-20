@@ -29,18 +29,32 @@ const Blog = () => {
 
   return (
     <div className="page-wrapper">
-      <div className="page-header">
-        <div className="container" style={{ textAlign: 'center' }}>
-          <h1>Recruitment Insights &amp; Industry Trends</h1>
-          <div className="breadcrumb" style={{ fontSize: '1rem', marginTop: '15px', marginBottom: '15px' }}>
-            <Link to="/" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Home</Link> <span style={{ margin: '0 10px' }}>/</span> <span style={{ opacity: 0.85 }}>Blog</span>
+      <div className="page-header blog-page-header">
+        <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 3 }}>
+          <div className="header-pill-badge" data-aos="fade-down">
+            LATEST INSIGHTS
           </div>
-          <p>Expert articles and market perspectives on IT engineering hiring and digital marketing growth.</p>
+          <h1 data-aos="fade-up">
+            Recruitment <span className="header-highlight">Insights &amp; Trends</span>
+          </h1>
+          <p data-aos="fade-up" data-aos-delay="100">
+            Expert articles and market perspectives on IT engineering hiring and digital marketing growth.
+          </p>
+        </div>
+
+        {/* Crisp Single-Layer Fluid Wave Divider */}
+        <div className="page-header-curve">
+          <svg viewBox="0 0 1440 90" fill="none" preserveAspectRatio="none">
+            <path 
+              d="M0,45 C380,95 720,18 1080,58 C1260,78 1380,48 1440,38 L1440,90 L0,90 Z" 
+              fill="var(--cream)" 
+            />
+          </svg>
         </div>
       </div>
       
-      <div className="container page-content">
-        <div className="content-box">
+      <div className="container page-content" style={{ paddingTop: '3rem' }}>
+        <div className="content-box" style={{ margin: '0 auto', borderRadius: '24px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem' }}>
             {posts.map((post, i) => (
               <div key={i} className="blog-card" data-aos="fade-up" data-aos-delay={i * 150}>
