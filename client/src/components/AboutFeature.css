@@ -1,5 +1,5 @@
 .about-section {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F4 180px, #FAF8F4 calc(100% - 180px), #FFFFFF 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFC 180px, #FAFAFC calc(100% - 180px), #FFFFFF 100%);
   padding: 6rem 0;
   position: relative;
   border-top: none;

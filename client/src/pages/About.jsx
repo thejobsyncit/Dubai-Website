@@ -9,7 +9,9 @@ import {
   Globe2, 
   CheckCircle2, 
   ArrowRight, 
-  Sparkles 
+  Sparkles,
+  User,
+  Check 
 } from 'lucide-react';
 import AboutFeature from '../components/AboutFeature';
 import WhyChooseUs from '../components/WhyChooseUs';
@@ -213,60 +215,90 @@ const About = () => {
       />
 
       {/* 4. MEET OUR FOUNDER */}
-      <section className="section-padding" style={{ background: 'var(--cream)', paddingTop: '5rem', paddingBottom: '6rem' }}>
+      <section className="section-padding founder-section" style={{ background: 'var(--cream)', paddingTop: '5rem', paddingBottom: '6rem' }}>
         <div className="container">
           <div className="about-sub-header" data-aos="fade-up">
             <span className="about-card-pill">LEADERSHIP SPOTLIGHT</span>
             <h2>Meet Our Founder</h2>
             <p>
-              Leading with passion and deep industry expertise, our leadership brings over a decade of specialized tech recruitment experience across Dubai and international markets.
+              Driving technology innovation, global talent acquisition, and strategic partnerships for sustainable business growth.
             </p>
           </div>
 
           <div className="founder-card" data-aos="fade-up" data-aos-delay="100">
-            {/* Founder Visual Side */}
-            <div className="founder-img-wrap">
-              <img 
-                src="/founder.jpg" 
-                alt="Founder & CEO - THE JASYNC" 
-                className="founder-img" 
-              />
-              <div className="founder-exp-badge">
-                <Sparkles size={28} style={{ color: 'var(--orange-light)', flexShrink: 0 }} />
-                <div>
-                  <h4>10+ Years</h4>
-                  <p>Tech Talent &amp; Executive Staffing</p>
+            {/* Founder Visual Side: Blank Card Placeholder */}
+            <div className="founder-img-col">
+              <div className="founder-img-wrap founder-img-blank">
+                {/* Photo Slot: Drop founder photo here by replacing the placeholder or setting an img tag */}
+                <div className="founder-blank-placeholder">
+                  <div className="founder-blank-icon">
+                    <User size={54} strokeWidth={1.5} />
+                  </div>
+                  <span className="founder-blank-title">Founder Photo</span>
+                  <span className="founder-blank-hint">Image slot ready for photo</span>
                 </div>
+                <span className="founder-badge">FOUNDER</span>
               </div>
             </div>
 
-            {/* Founder Story & Insights */}
+            {/* Founder Story & Profile */}
             <div className="founder-content">
               <div className="founder-header-role">
-                <h3>Jalpesh Patel</h3>
-                <span className="founder-title-badge">Founder &amp; Managing Director</span>
+                <h3 className="founder-name">Anitha Ekambaram</h3>
+                <div className="founder-title-wrap">
+                  <span className="founder-title-text">Founder &amp; Managing Director</span>
+                  <div className="founder-title-underline"></div>
+                </div>
               </div>
 
-              <div className="founder-quote">
-                “At THE JASYNC, our philosophy is simple: great companies are built by exceptional people. We don't just fill job vacancies; we forge long-term partnerships between ambitious technology innovators and the world-class talent capable of bringing their vision to life.”
+              <div className="founder-bio">
+                <p>
+                  Anitha Ekambaram, M.B.A., is the Founder &amp; Managing Director of The JobSync, a technology-driven recruitment and IT services company focused on connecting businesses with talent and delivering innovative technology solutions.
+                </p>
+                <p>
+                  Under her leadership, The JobSync / GoJobSync focuses on software development, IT consulting, digital transformation, cloud solutions, cybersecurity, AI and technology services, recruitment, talent acquisition, for startups, SMEs, and enterprises.
+                </p>
+                <p>
+                  With a strong focus on innovation, people, and technology, Anitha is committed to building trusted partnerships, creating effective recruitment solutions, and helping organizations improve their operations, scale their capabilities, and achieve sustainable business growth.
+                </p>
               </div>
 
-              <ul className="founder-bullets">
+              {/* Quote Block */}
+              <div className="founder-quote-box">
+                <p>
+                  “At The JobSync, we believe that the right combination of people, technology, and trusted partnerships can create meaningful opportunities and sustainable business growth.”
+                </p>
+              </div>
+
+              {/* Checklist Points */}
+              <ul className="founder-checklist">
                 <li>
-                  <CheckCircle2 size={18} />
-                  <span>Deep expertise in UAE labor regulations, mainland &amp; free-zone entity hiring, and seamless visa processing.</span>
+                  <div className="founder-check-icon">
+                    <Check size={16} strokeWidth={2.5} />
+                  </div>
+                  <span>Founder &amp; Managing Director of The JobSync</span>
                 </li>
                 <li>
-                  <CheckCircle2 size={18} />
-                  <span>Pioneered practical coding and architecture vetting frameworks ensuring an unprecedented 94% retention rate.</span>
+                  <div className="founder-check-icon">
+                    <Check size={16} strokeWidth={2.5} />
+                  </div>
+                  <span>Focused on recruitment, talent acquisition, and HR technology solutions</span>
                 </li>
                 <li>
-                  <CheckCircle2 size={18} />
-                  <span>Dedicated to building ethical, transparent recruitment bridges connecting global tech hubs with the UAE.</span>
+                  <div className="founder-check-icon">
+                    <Check size={16} strokeWidth={2.5} />
+                  </div>
+                  <span>Driving IT consulting, software development, and digital transformation</span>
+                </li>
+                <li>
+                  <div className="founder-check-icon">
+                    <Check size={16} strokeWidth={2.5} />
+                  </div>
+                  <span>Building technology-driven solutions for startups, SMEs, and enterprises</span>
                 </li>
               </ul>
 
-              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '0.5rem' }}>
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '2rem' }}>
                 <Link to="/contact" className="btn btn-orange" style={{ padding: '0.85rem 1.8rem', fontSize: '0.95rem' }}>
                   Schedule a Consultation <ArrowRight size={16} style={{ marginLeft: '6px' }} />
                 </Link>

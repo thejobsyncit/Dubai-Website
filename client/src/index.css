@@ -7,8 +7,8 @@
 --plum-soft: #666A8A;    /* Icons, decorations, gradient accents */
 --plum-gradient: linear-gradient(135deg, #131527 0%, #202340 35%, #2D315A 70%, #464D8B 100%);
 --indigo-gradient: linear-gradient(135deg, #131527 0%, #202340 35%, #2D315A 70%, #464D8B 100%);
---cream: #FCFAF7;         /* Crisp, luminous luxury pearl ivory background */
---cream-dark: #F2EFEB;    /* Delicate soft tone for badges, subtle borders */
+--cream: #FAFAFC;         /* Crisp, luminous ultra-light pearl white background (no yellow/beige tint) */
+--cream-dark: #EDEDF2;    /* Delicate cool-neutral tone for badges and subtle borders */
 --white: #FFFFFF;         /* Cards and content backgrounds */
 --orange: #F59E0B;        /* Primary amber/gold accent */
 --orange-light: #FBBF24;  /* Lighter amber for gradient */
