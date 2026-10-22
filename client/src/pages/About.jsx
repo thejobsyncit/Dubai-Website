@@ -10,7 +10,6 @@ import {
   CheckCircle2, 
   ArrowRight, 
   Sparkles,
-  User,
   Check 
 } from 'lucide-react';
 import AboutFeature from '../components/AboutFeature';
@@ -226,17 +225,14 @@ const About = () => {
           </div>
 
           <div className="founder-card" data-aos="fade-up" data-aos-delay="100">
-            {/* Founder Visual Side: Blank Card Placeholder */}
+            {/* Founder Visual Side */}
             <div className="founder-img-col">
-              <div className="founder-img-wrap founder-img-blank">
-                {/* Photo Slot: Drop founder photo here by replacing the placeholder or setting an img tag */}
-                <div className="founder-blank-placeholder">
-                  <div className="founder-blank-icon">
-                    <User size={54} strokeWidth={1.5} />
-                  </div>
-                  <span className="founder-blank-title">Founder Photo</span>
-                  <span className="founder-blank-hint">Image slot ready for photo</span>
-                </div>
+              <div className="founder-img-wrap">
+                <img 
+                  src="/Founder_JASYNC.png" 
+                  alt="Anitha Ekambaram - Founder & Managing Director" 
+                  className="founder-img" 
+                />
                 <span className="founder-badge">FOUNDER</span>
               </div>
             </div>

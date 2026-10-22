@@ -6,7 +6,7 @@ import './Hero.css';
 const Hero = () => {
   return (
     <section className="hero-section">
-      <img src="/Modern_Dubai_waterfront_skyline.jpg" alt="Modern Dubai Waterfront Skyline" className="hero-bg-img" />
+      <img src="/background_for_jasync.jpg" alt="Modern Dubai Business Cityscape" className="hero-bg-img" />
       <div className="hero-bg-overlay"></div>
       
       <div className="container hero-container">
