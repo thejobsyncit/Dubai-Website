@@ -1,22 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import './AboutFeature.css';
 
 const AboutFeature = () => {
   const [currentImage, setCurrentImage] = React.useState(0);
 
-  // =========================================================================
-  // SHOWCASE IMAGES (Auto-scrolling Slideshow)
-  // CHANGE IMAGES HERE: Replace image paths below
-  // =========================================================================
   const images = [
-    "/about_1.jpg", // Image 1 (About us 1)
-    "/about_2.jpg", // Image 2 (About us 2)
-    "/about_3.jpg"  // Image 3 (About us 3)
+    "/about_1.jpg",
+    "/about_2.jpg",
+    "/about_3.jpg"
   ];
 
-  // Automatic Smooth Image Scroll / Slideshow every 4 seconds
   React.useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
@@ -27,58 +21,53 @@ const AboutFeature = () => {
   return (
     <section className="about-section section-padding">
       <div className="container">
-        
-        {/* Centered Section Header (Matches Reference Image 1) */}
-        <div className="about-header" data-aos="fade-up">
+
+        <div className="about-header">
           <h2>About Our Company</h2>
           <div className="about-header-line"></div>
         </div>
 
-        {/* Dual Cards Grid (Equal Alignment & Height) */}
         <div className="about-cards-grid">
-          
-          {/* Left Card: Automatic Scrolling Image Showcase Card */}
-          <div className="about-card about-card-left" data-aos="fade-right">
+
+          <div className="about-card about-card-left">
             <div className="about-card-img-wrap">
               {images.map((imgSrc, idx) => (
-                <img 
+                <img
                   key={idx}
-                  src={imgSrc} 
-                  alt={`TheJaySync Showcase ${idx + 1}`} 
+                  src={imgSrc}
+                  alt={`TheJaySync Showcase ${idx + 1}`}
                   className={`about-card-img ${idx === currentImage ? 'active' : ''}`}
                 />
               ))}
-              <div className="about-card-img-overlay"></div>
-              
-              {/* Company Badge (Updated for TheJaySync) */}
+              <div className="about-card-img-overlay" aria-hidden="true"></div>
+
               <div className="about-card-badge">
                 <h3>THE JASYNC</h3>
-                <p>Specialized IT &amp;<br/>Digital Marketing Recruitment</p>
+                <p>Specialized IT &amp;<br />Digital Marketing Recruitment</p>
               </div>
             </div>
           </div>
 
-          {/* Right Card: Content Card */}
-          <div className="about-card about-card-right" data-aos="fade-left" data-aos-delay="150">
+          <div className="about-card about-card-right">
             <div className="about-card-body">
               <span className="about-card-pill">ABOUT THE JASYNC</span>
               <h2>Connecting Specialized Tech &amp; Marketing Talent with Industry Leaders</h2>
-              
+
               <p className="text-light">
                 Headquartered at Dubai Creek Tower, THE JASYNC bridges the gap between elite software engineers, web developers, and performance marketers with top organizations across the UAE and worldwide. Our tailored recruitment approach ensures exceptional technical talent and culture fit for fast-moving teams.
               </p>
 
               <ul className="feature-list">
                 <li>
-                  <CheckCircle2 className="check-icon" size={20} />
+                  <CheckCircle2 className="check-icon" size={20} aria-hidden="true" />
                   <span>Rigorous Technical &amp; Coding Screening (Python, React, Cloud DevOps)</span>
                 </li>
                 <li>
-                  <CheckCircle2 className="check-icon" size={20} />
+                  <CheckCircle2 className="check-icon" size={20} aria-hidden="true" />
                   <span>Vetted Performance Marketers, SEO &amp; Growth Strategists</span>
                 </li>
                 <li>
-                  <CheckCircle2 className="check-icon" size={20} />
+                  <CheckCircle2 className="check-icon" size={20} aria-hidden="true" />
                   <span>Tailored Sourcing for Contract, Permanent &amp; Distributed Remote Teams</span>
                 </li>
               </ul>

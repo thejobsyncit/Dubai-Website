@@ -1,16 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Target, 
-  Compass, 
-  Code2, 
-  ShieldCheck, 
-  TrendingUp, 
-  Globe2, 
-  CheckCircle2, 
-  ArrowRight, 
-  Sparkles,
-  Check 
+import {
+  Target,
+  Compass,
+  Code2,
+  ShieldCheck,
+  TrendingUp,
+  Globe2,
+  CheckCircle2,
+  ArrowRight,
+  Check
 } from 'lucide-react';
 import AboutFeature from '../components/AboutFeature';
 import WhyChooseUs from '../components/WhyChooseUs';
@@ -22,35 +21,25 @@ const About = () => {
       {/* Header Banner */}
       <div className="page-header about-page-header">
         <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 3 }}>
-          <div className="header-pill-badge" data-aos="fade-down">
+          <div className="header-pill-badge">
             WHO WE ARE
           </div>
-          <h1 data-aos="fade-up">
+          <h1>
             About <span className="header-highlight">THE JASYNC</span>
           </h1>
-          <p data-aos="fade-up" data-aos-delay="100">
+          <p>
             Connecting skilled IT professionals and digital marketing talent with leading companies worldwide.
           </p>
         </div>
-
-        {/* Crisp Single-Layer Fluid Wave Divider */}
-        <div className="page-header-curve">
-          <svg viewBox="0 0 1440 90" fill="none" preserveAspectRatio="none">
-            <path 
-              d="M0,45 C380,95 720,18 1080,58 C1260,78 1380,48 1440,38 L1440,90 L0,90 Z" 
-              fill="var(--cream)" 
-            />
-          </svg>
-        </div>
       </div>
-      
+
       {/* Main Section: About Our Company Dual Showcase */}
       <AboutFeature />
 
       {/* 1. MISSION & VISION */}
-      <section className="section-padding" style={{ background: 'var(--cream)', paddingTop: '4.5rem', paddingBottom: '5.5rem' }}>
+      <section className="section-padding" style={{ backgroundColor: 'var(--warm-white)', paddingTop: '4.5rem', paddingBottom: '5.5rem' }}>
         <div className="container">
-          <div className="about-sub-header" data-aos="fade-up">
+          <div className="about-sub-header">
             <span className="about-card-pill">OUR PURPOSE &amp; DIRECTION</span>
             <h2>Mission &amp; Vision</h2>
             <p>
@@ -59,10 +48,9 @@ const About = () => {
           </div>
 
           <div className="mission-vision-grid">
-            {/* Mission Card */}
-            <div className="mv-card" data-aos="fade-up" data-aos-delay="100">
+            <div className="mv-card">
               <div className="mv-icon-badge">
-                <Target size={30} />
+                <Target size={28} aria-hidden="true" />
               </div>
               <h3>Our Mission</h3>
               <p className="mv-lead">
@@ -70,24 +58,23 @@ const About = () => {
               </p>
               <ul className="mv-points-list">
                 <li>
-                  <CheckCircle2 size={18} />
+                  <CheckCircle2 size={18} aria-hidden="true" />
                   <span><strong>Comprehensive Code &amp; Architecture Vetting:</strong> Every engineer is assessed on practical problem-solving before submission.</span>
                 </li>
                 <li>
-                  <CheckCircle2 size={18} />
+                  <CheckCircle2 size={18} aria-hidden="true" />
                   <span><strong>Accelerated 48–72h Turnaround:</strong> Delivering high-precision talent shortlists to keep projects on schedule.</span>
                 </li>
                 <li>
-                  <CheckCircle2 size={18} />
+                  <CheckCircle2 size={18} aria-hidden="true" />
                   <span><strong>UAE &amp; GCC Compliance:</strong> End-to-end guidance on labor regulations, remote payroll, and relocation visas.</span>
                 </li>
               </ul>
             </div>
 
-            {/* Vision Card */}
-            <div className="mv-card" data-aos="fade-up" data-aos-delay="200">
+            <div className="mv-card">
               <div className="mv-icon-badge">
-                <Compass size={30} />
+                <Compass size={28} aria-hidden="true" />
               </div>
               <h3>Our Vision</h3>
               <p className="mv-lead">
@@ -95,16 +82,16 @@ const About = () => {
               </p>
               <ul className="mv-points-list">
                 <li>
-                  <CheckCircle2 size={18} />
+                  <CheckCircle2 size={18} aria-hidden="true" />
                   <span><strong>Global Talent Hub:</strong> Cementing Dubai as the premier international destination for software innovators and growth leaders.</span>
                 </li>
                 <li>
-                  <CheckCircle2 size={18} />
+                  <CheckCircle2 size={18} aria-hidden="true" />
                   <span><strong>Exceptional 94%+ Retention Rate:</strong> Prioritizing cultural synergy and career growth for resilient, lasting placements.</span>
                 </li>
                 <li>
-                  <CheckCircle2 size={18} />
-                  <span><strong>Future-Ready Workforces:</strong> Helping enterprises scale scalable distributed pods and high-impact agile teams.</span>
+                  <CheckCircle2 size={18} aria-hidden="true" />
+                  <span><strong>Future-Ready Workforces:</strong> Helping enterprises scale distributed pods and high-impact agile teams.</span>
                 </li>
               </ul>
             </div>
@@ -113,9 +100,9 @@ const About = () => {
       </section>
 
       {/* 2. WHAT WE DO */}
-      <section className="section-padding" style={{ background: 'var(--white)', paddingTop: '5rem', paddingBottom: '5.5rem' }}>
+      <section className="section-padding" style={{ backgroundColor: 'var(--white)', paddingTop: '5rem', paddingBottom: '5.5rem', borderTop: '1px solid var(--border-light)', borderBottom: '1px solid var(--border-light)' }}>
         <div className="container">
-          <div className="about-sub-header" data-aos="fade-up">
+          <div className="about-sub-header">
             <span className="about-card-pill">SPECIALIZED RECRUITMENT DOMAINS</span>
             <h2>What We Do</h2>
             <p>
@@ -124,11 +111,10 @@ const About = () => {
           </div>
 
           <div className="what-we-do-grid">
-            {/* Domain 1 */}
-            <div className="wwd-card" data-aos="fade-up" data-aos-delay="100">
+            <div className="wwd-card">
               <div>
                 <div className="wwd-icon-box">
-                  <Code2 size={26} />
+                  <Code2 size={24} aria-hidden="true" />
                 </div>
                 <h3>IT &amp; Software Engineering</h3>
                 <p>
@@ -144,11 +130,10 @@ const About = () => {
               </div>
             </div>
 
-            {/* Domain 2 */}
-            <div className="wwd-card" data-aos="fade-up" data-aos-delay="200">
+            <div className="wwd-card">
               <div>
                 <div className="wwd-icon-box">
-                  <ShieldCheck size={26} />
+                  <ShieldCheck size={24} aria-hidden="true" />
                 </div>
                 <h3>Cloud, DevOps &amp; Security</h3>
                 <p>
@@ -164,11 +149,10 @@ const About = () => {
               </div>
             </div>
 
-            {/* Domain 3 */}
-            <div className="wwd-card" data-aos="fade-up" data-aos-delay="300">
+            <div className="wwd-card">
               <div>
                 <div className="wwd-icon-box">
-                  <TrendingUp size={26} />
+                  <TrendingUp size={24} aria-hidden="true" />
                 </div>
                 <h3>Digital Marketing &amp; Growth</h3>
                 <p>
@@ -184,11 +168,10 @@ const About = () => {
               </div>
             </div>
 
-            {/* Domain 4 */}
-            <div className="wwd-card" data-aos="fade-up" data-aos-delay="400">
+            <div className="wwd-card">
               <div>
                 <div className="wwd-icon-box">
-                  <Globe2 size={26} />
+                  <Globe2 size={24} aria-hidden="true" />
                 </div>
                 <h3>Executive &amp; Distributed Teams</h3>
                 <p>
@@ -207,16 +190,16 @@ const About = () => {
       </section>
 
       {/* 3. WHY CHOOSE THE JASYNC */}
-      <WhyChooseUs 
+      <WhyChooseUs
         label="WHY CHOOSE US"
-        title="Why Choose The Jasync" 
+        title="Why Choose The Jasync"
         subtitle="We combine rigorous technical screening, rapid 48-72h turnaround, and an unmatched 90-day placement guarantee to help you build high-performing teams with complete confidence."
       />
 
       {/* 4. MEET OUR FOUNDER */}
-      <section className="section-padding founder-section" style={{ background: 'var(--cream)', paddingTop: '5rem', paddingBottom: '6rem' }}>
+      <section className="section-padding founder-section" style={{ backgroundColor: 'var(--warm-white)', paddingTop: '4.5rem', paddingBottom: '6rem', borderTop: '1px solid var(--border-light)' }}>
         <div className="container">
-          <div className="about-sub-header" data-aos="fade-up">
+          <div className="about-sub-header">
             <span className="about-card-pill">LEADERSHIP SPOTLIGHT</span>
             <h2>Meet Our Founder</h2>
             <p>
@@ -224,20 +207,18 @@ const About = () => {
             </p>
           </div>
 
-          <div className="founder-card" data-aos="fade-up" data-aos-delay="100">
-            {/* Founder Visual Side */}
+          <div className="founder-card">
             <div className="founder-img-col">
               <div className="founder-img-wrap">
-                <img 
-                  src="/Founder_JASYNC.png" 
-                  alt="Anitha Ekambaram - Founder & Managing Director" 
-                  className="founder-img" 
+                <img
+                  src="/Founder_JASYNC.png"
+                  alt="Anitha Ekambaram - Founder & Managing Director"
+                  className="founder-img"
                 />
                 <span className="founder-badge">FOUNDER</span>
               </div>
             </div>
 
-            {/* Founder Story & Profile */}
             <div className="founder-content">
               <div className="founder-header-role">
                 <h3 className="founder-name">Anitha Ekambaram</h3>
@@ -259,46 +240,44 @@ const About = () => {
                 </p>
               </div>
 
-              {/* Quote Block */}
               <div className="founder-quote-box">
                 <p>
                   “At The JobSync, we believe that the right combination of people, technology, and trusted partnerships can create meaningful opportunities and sustainable business growth.”
                 </p>
               </div>
 
-              {/* Checklist Points */}
               <ul className="founder-checklist">
                 <li>
                   <div className="founder-check-icon">
-                    <Check size={16} strokeWidth={2.5} />
+                    <Check size={15} strokeWidth={2.5} aria-hidden="true" />
                   </div>
                   <span>Founder &amp; Managing Director of The JobSync</span>
                 </li>
                 <li>
                   <div className="founder-check-icon">
-                    <Check size={16} strokeWidth={2.5} />
+                    <Check size={15} strokeWidth={2.5} aria-hidden="true" />
                   </div>
                   <span>Focused on recruitment, talent acquisition, and HR technology solutions</span>
                 </li>
                 <li>
                   <div className="founder-check-icon">
-                    <Check size={16} strokeWidth={2.5} />
+                    <Check size={15} strokeWidth={2.5} aria-hidden="true" />
                   </div>
                   <span>Driving IT consulting, software development, and digital transformation</span>
                 </li>
                 <li>
                   <div className="founder-check-icon">
-                    <Check size={16} strokeWidth={2.5} />
+                    <Check size={15} strokeWidth={2.5} aria-hidden="true" />
                   </div>
                   <span>Building technology-driven solutions for startups, SMEs, and enterprises</span>
                 </li>
               </ul>
 
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '2rem' }}>
-                <Link to="/contact" className="btn btn-orange" style={{ padding: '0.85rem 1.8rem', fontSize: '0.95rem' }}>
-                  Schedule a Consultation <ArrowRight size={16} style={{ marginLeft: '6px' }} />
+                <Link to="/contact" className="btn btn-gold">
+                  Schedule a Consultation <ArrowRight size={16} aria-hidden="true" />
                 </Link>
-                <Link to="/services" className="btn btn-orange-outline" style={{ padding: '0.85rem 1.8rem', fontSize: '0.95rem' }}>
+                <Link to="/services" className="btn btn-outline">
                   Explore Services
                 </Link>
               </div>

@@ -37,33 +37,23 @@ const FAQ = () => {
     <div className="page-wrapper">
       <div className="page-header faq-page-header">
         <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 3 }}>
-          <div className="header-pill-badge" data-aos="fade-down">
+          <div className="header-pill-badge">
             HELP &amp; SUPPORT
           </div>
-          <h1 data-aos="fade-up">
+          <h1>
             Frequently Asked <span className="header-highlight">Questions</span>
           </h1>
-          <p data-aos="fade-up" data-aos-delay="100">
+          <p>
             Find answers to common questions about our IT and digital marketing recruitment solutions.
           </p>
         </div>
-
-        {/* Crisp Single-Layer Fluid Wave Divider */}
-        <div className="page-header-curve">
-          <svg viewBox="0 0 1440 90" fill="none" preserveAspectRatio="none">
-            <path 
-              d="M0,45 C380,95 720,18 1080,58 C1260,78 1380,48 1440,38 L1440,90 L0,90 Z" 
-              fill="var(--cream)" 
-            />
-          </svg>
-        </div>
       </div>
-      
+
       <div className="container page-content" style={{ paddingTop: '3rem' }}>
-        <div className="content-box" style={{ maxWidth: '850px', margin: '0 auto 0', padding: '3.5rem 3rem', borderRadius: '24px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '6px 16px', background: 'var(--peach)', border: '1px solid rgba(240, 120, 36, 0.25)', borderRadius: '50px', color: 'var(--orange-hover)', fontWeight: '700', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '15px' }}>
-              <HelpCircle size={16} /> Recruitment Knowledge Base
+        <div className="content-box faq-container-box">
+          <div style={{ textAlign: 'center', marginBottom: '2.75rem' }}>
+            <div className="faq-badge">
+              <HelpCircle size={15} aria-hidden="true" /> Recruitment Knowledge Base
             </div>
             <h2>Got Questions? We Have Answers.</h2>
             <p style={{ color: 'var(--color-text-muted)', maxWidth: '580px', margin: '0 auto' }}>
@@ -71,42 +61,25 @@ const FAQ = () => {
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div className="faq-list">
             {faqs.map((faq, i) => {
               const isOpen = openIndex === i;
               return (
-                <div 
-                  key={i} 
-                  onClick={() => toggleFaq(i)}
-                  style={{ 
-                    border: isOpen ? '2px solid var(--orange)' : '1px solid var(--cream-dark)', 
-                    borderRadius: '16px', 
-                    padding: '1.5rem 1.8rem', 
-                    background: 'var(--white)', 
-                    cursor: 'pointer',
-                    transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
-                    boxShadow: isOpen ? '0 12px 25px -8px rgba(56, 25, 50, 0.12)' : 'none'
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '15px' }}>
-                    <h3 style={{ fontSize: '1.18rem', color: 'var(--plum)', margin: 0, fontWeight: '700' }}>
-                      {faq.q}
-                    </h3>
-                    <div style={{ 
-                      width: '36px', height: '36px', borderRadius: '50%', 
-                      background: isOpen ? 'var(--orange)' : 'var(--cream-dark)', 
-                      color: isOpen ? 'var(--white)' : 'var(--plum)', 
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      flexShrink: 0,
-                      transition: 'transform 0.4s ease, background 0.3s ease',
-                      transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)'
-                    }}>
-                      <ChevronDown size={20} />
-                    </div>
-                  </div>
-                  
+                <div key={i} className={`faq-item ${isOpen ? 'is-open' : ''}`}>
+                  <button
+                    type="button"
+                    className="faq-trigger"
+                    onClick={() => toggleFaq(i)}
+                    aria-expanded={isOpen}
+                  >
+                    <h3 className="faq-question">{faq.q}</h3>
+                    <span className="faq-chevron" aria-hidden="true">
+                      <ChevronDown size={18} />
+                    </span>
+                  </button>
+
                   {isOpen && (
-                    <div style={{ marginTop: '1.2rem', paddingTop: '1.2rem', borderTop: '1px dashed var(--cream-dark)', color: 'var(--color-text-muted)', lineHeight: '1.8', fontSize: '1.02rem' }}>
+                    <div className="faq-answer">
                       {faq.a}
                     </div>
                   )}
@@ -115,17 +88,17 @@ const FAQ = () => {
             })}
           </div>
 
-          <div style={{ marginTop: '4rem', padding: '2.5rem', background: 'var(--white)', borderRadius: '20px', border: '1px solid var(--cream-dark)', textAlign: 'center' }}>
-            <MessageCircle size={36} className="text-orange" style={{ margin: '0 auto 12px' }} />
-            <h3 style={{ fontSize: '1.5rem', color: 'var(--plum)', marginBottom: '8px' }}>Have a Specific Recruitment Question?</h3>
-            <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.8rem', maxWidth: '520px', margin: '0 auto 1.8rem' }}>
+          <div className="faq-cta-box">
+            <MessageCircle size={32} style={{ color: 'var(--gold-text)', margin: '0 auto 12px' }} aria-hidden="true" />
+            <h3 style={{ fontSize: '1.45rem', color: 'var(--navy)', marginBottom: '8px' }}>Have a Specific Recruitment Question?</h3>
+            <p style={{ color: 'var(--color-text-muted)', marginBottom: '1.75rem', maxWidth: '520px', margin: '0 auto 1.75rem' }}>
               Whether you are looking to hire software engineers, scale a marketing department, or explore new career opportunities, we are here to assist you.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
-              <Link to="/contact" className="btn btn-orange" style={{ padding: '0.85rem 2rem' }}>
-                Hire Talent <ArrowRight size={18} />
+              <Link to="/contact" className="btn btn-gold">
+                Hire Talent <ArrowRight size={18} aria-hidden="true" />
               </Link>
-              <Link to="/contact" className="btn btn-orange-outline" style={{ padding: '0.85rem 2rem' }}>
+              <Link to="/contact" className="btn btn-outline">
                 Submit Your Resume
               </Link>
             </div>

@@ -1,65 +1,62 @@
 .about-section {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFC 180px, #FAFAFC calc(100% - 180px), #FFFFFF 100%);
-  padding: 6rem 0;
+  background-color: var(--white);
+  padding: 5.5rem 0;
   position: relative;
-  border-top: none;
-  border-bottom: none;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
   overflow: hidden;
 }
 
-/* Centered Header with 'About Our Company' (Matches Reference Image 1) */
 .about-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3.25rem;
 }
 
 .about-header h2 {
-  font-size: 2.7rem;
+  font-size: clamp(2rem, 3vw, 2.65rem);
   font-weight: 800;
-  color: var(--plum);
+  color: var(--navy);
   letter-spacing: -0.5px;
   margin-bottom: 0.8rem;
   line-height: 1.2;
 }
 
 .about-header-line {
-  width: 55px;
-  height: 3.5px;
-  background: linear-gradient(90deg, #FBBF24, #F59E0B);
+  width: 56px;
+  height: 3px;
+  background-color: var(--gold);
   margin: 0 auto;
-  border-radius: 4px;
 }
 
 .about-card-pill {
   display: inline-block;
-  padding: 0.45rem 1.25rem;
-  background: var(--cream-dark);
-  color: var(--plum);
-  border-radius: 50px;
-  font-size: 0.82rem;
+  padding: 0.42rem 1rem;
+  background-color: var(--ivory);
+  color: var(--navy);
+  border: 1px solid #D6CBB8;
+  border-radius: var(--border-radius-sm);
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.2px;
   margin-bottom: 1.2rem;
   align-self: flex-start;
-  box-shadow: 0 2px 8px rgba(40, 43, 74, 0.04);
 }
 
-/* Dual Cards Grid with Equal Alignment & Stretch */
 .about-cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.2rem;
-  align-items: stretch; /* Ensures both cards match in height & top/bottom alignment */
+  gap: 2rem;
+  align-items: stretch;
 }
 
-/* Shared Card Styling */
 .about-card {
-  background: var(--white);
-  border: 1px solid var(--cream-dark);
-  border-radius: 24px;
-  box-shadow: 0 10px 30px -10px rgba(40, 43, 74, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  background-color: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -67,14 +64,13 @@
 }
 
 .about-card:hover {
-  box-shadow: 0 16px 40px -12px rgba(40, 43, 74, 0.12);
-  border-color: rgba(40, 43, 74, 0.15);
+  box-shadow: var(--shadow-md);
+  border-color: var(--ivory);
 }
 
-/* Left Card: Image Showcase */
 .about-card-left {
   position: relative;
-  min-height: 480px;
+  min-height: 460px;
 }
 
 .about-card-img-wrap {
@@ -82,9 +78,9 @@
   width: 100%;
   height: 100%;
   flex: 1;
-  min-height: 480px;
+  min-height: 460px;
   overflow: hidden;
-  background: var(--plum);
+  background-color: var(--navy);
 }
 
 .about-card-img {
@@ -96,62 +92,57 @@
   object-fit: cover;
   display: block;
   opacity: 0;
-  transform: scale(1);
-  transition: opacity 1.2s ease-in-out, transform 6s ease-out;
+  transition: opacity 0.8s ease-in-out;
   pointer-events: none;
 }
 
 .about-card-img.active {
   opacity: 1;
-  transform: scale(1.04);
   pointer-events: auto;
 }
 
-/* Subtle gradient overlay at bottom so badge pops cleanly */
+/* Readability scrim over bottom of showcase image */
 .about-card-img-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(40, 43, 74, 0.05) 40%, rgba(40, 43, 74, 0.68) 100%);
+  background: linear-gradient(180deg, rgba(16, 27, 45, 0) 45%, rgba(16, 27, 45, 0.72) 100%);
   pointer-events: none;
 }
 
-/* Company Badge inside Left Card */
 .about-card-badge {
   position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-  padding: 1.2rem 1.7rem;
-  border-radius: 16px;
-  background: var(--plum);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: #FFFFFF;
+  bottom: 1.75rem;
+  left: 1.75rem;
+  padding: 1.15rem 1.55rem;
+  border-radius: var(--border-radius-md);
+  background-color: var(--navy);
+  border: 1px solid var(--gold);
+  color: var(--white);
   z-index: 6;
-  box-shadow: 0 14px 30px rgba(40, 43, 74, 0.4);
-  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-md);
 }
 
 .about-card-badge h3 {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--white);
   margin-bottom: 0.3rem;
   line-height: 1.2;
   letter-spacing: 0.5px;
 }
 
 .about-card-badge p {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--ivory);
   text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1.4;
   margin: 0;
 }
 
-/* Right Card: Content */
 .about-card-right {
-  padding: 3.2rem 3rem;
+  padding: 2.8rem 2.6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -165,139 +156,78 @@
 }
 
 .about-card-right h2 {
-  font-size: 2.3rem;
+  font-size: 2.15rem;
   font-weight: 800;
   line-height: 1.25;
   margin-bottom: 1.1rem;
-  color: var(--plum);
+  color: var(--navy);
 }
 
 .about-card-right p.text-light {
-  font-size: 1.05rem;
+  font-size: 1.02rem;
   line-height: 1.75;
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.75rem;
   color: var(--color-text-muted);
 }
 
 .feature-list {
-  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.8rem;
 }
 
 .feature-list li {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
-  padding: 0.85rem 1.2rem;
-  background: var(--cream);
+  gap: 0.85rem;
+  padding: 0.85rem 1.1rem;
+  background-color: var(--warm-white);
   border-radius: var(--border-radius-md);
-  border: 1px solid var(--cream-dark);
+  border: 1px solid var(--border-light);
   font-weight: 600;
-  color: var(--plum);
-  font-size: 0.95rem;
+  color: var(--dark-text);
+  font-size: 0.94rem;
   transition: var(--transition-smooth);
 }
 
 .feature-list li:hover {
-  transform: translateX(6px);
-  border-color: var(--plum-soft);
-  background: #E8E5D3;
-  color: var(--plum);
+  border-color: var(--gold);
+  background-color: var(--white);
 }
 
 .check-icon {
-  color: var(--plum);
+  color: var(--gold-text);
   flex-shrink: 0;
-  transition: transform 0.3s ease;
 }
 
-.feature-list li:hover .check-icon {
-  transform: scale(1.15);
-}
-
-/* Action: Read More Button */
-.about-card-action {
-  margin-top: 0.5rem;
-}
-
-.read-more-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.9rem 2.2rem;
-  font-size: 0.95rem;
-  font-weight: 700;
-  border-radius: 50px;
-  background: var(--plum);
-  color: #FFFFFF !important;
-  border: 1px solid var(--plum);
-  box-shadow: 0 8px 20px -4px rgba(40, 43, 74, 0.25);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  text-decoration: none;
-  width: fit-content;
-}
-
-.read-more-btn:hover {
-  background: var(--plum-light);
-  color: #FFFFFF !important;
-  border-color: var(--plum-light);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(40, 43, 74, 0.35);
-}
-
-.read-more-btn svg {
-  transition: transform 0.3s ease;
-}
-
-.read-more-btn:hover svg {
-  transform: translateX(4px);
-}
-
-/* Responsive Breakpoints */
 @media (max-width: 1024px) {
   .about-cards-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.75rem;
   }
-  
-  .about-card-left {
-    min-height: 420px;
-  }
-  
+
+  .about-card-left,
   .about-card-img-wrap {
-    min-height: 420px;
+    min-height: 400px;
   }
 
   .about-card-right {
-    padding: 2.2rem 2rem;
+    padding: 2.2rem 1.85rem;
   }
 
   .about-card-right h2 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }
 
 @media (max-width: 640px) {
   .about-section {
-    padding: 4.5rem 0;
+    padding: 4rem 0;
   }
 
-  .about-card-left {
-    min-height: 360px;
-  }
-
+  .about-card-left,
   .about-card-img-wrap {
-    min-height: 360px;
-  }
-
-  .about-secondary-thumb {
-    width: 95px;
-    height: 95px;
-    top: 1rem;
-    right: 1rem;
-    border-width: 3px;
+    min-height: 340px;
   }
 
   .about-card-badge {
@@ -307,33 +237,23 @@
   }
 
   .about-card-badge h3 {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .about-card-badge p {
     font-size: 0.72rem;
   }
 
-  .about-card-arrows {
-    bottom: 1rem;
-    right: 1rem;
-  }
-
-  .arrow-circle {
-    width: 38px;
-    height: 38px;
-  }
-
   .about-card-right {
-    padding: 1.8rem 1.3rem;
+    padding: 1.75rem 1.25rem;
   }
 
   .about-card-right h2 {
-    font-size: 1.65rem;
+    font-size: 1.6rem;
   }
 
   .feature-list li {
-    padding: 0.75rem 0.95rem;
+    padding: 0.75rem 0.9rem;
     font-size: 0.88rem;
   }
 }

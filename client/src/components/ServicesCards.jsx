@@ -7,7 +7,7 @@ const ServicesCards = () => {
   const serviceCategories = [
     {
       title: "Full-Stack & Web Development",
-      gradient: "linear-gradient(90deg, #FBBF24 0%, #F59E0B 100%)",
+      accentColor: "var(--gold)",
       items: [
         "Custom Web Applications & Portals",
         "React.js, Next.js & Modern UI Frontend",
@@ -18,7 +18,7 @@ const ServicesCards = () => {
     },
     {
       title: "Python & Backend Engineering",
-      gradient: "linear-gradient(90deg, #282B4A 0%, #4D5380 100%)",
+      accentColor: "var(--navy)",
       items: [
         "Senior Python Developers (Django, FastAPI, Flask)",
         "High-Performance Distributed Backend Systems",
@@ -29,7 +29,7 @@ const ServicesCards = () => {
     },
     {
       title: "React & Frontend Specialists",
-      gradient: "linear-gradient(90deg, #F59E0B 0%, #D97706 100%)",
+      accentColor: "var(--corporate-blue)",
       items: [
         "Modern React.js & Next.js Single-Page Apps",
         "Component-Driven UI Design Systems",
@@ -40,7 +40,7 @@ const ServicesCards = () => {
     },
     {
       title: "Marketing Analyst",
-      gradient: "linear-gradient(90deg, #3C4066 0%, #282B4A 100%)",
+      accentColor: "var(--gold)",
       items: [
         "Google Analytics 4 (GA4) & Google Tag Manager",
         "Multi-Touch Attribution & Funnel Tracking",
@@ -51,7 +51,7 @@ const ServicesCards = () => {
     },
     {
       title: "Social Media Executive",
-      gradient: "linear-gradient(90deg, #FBBF24 0%, #F59E0B 100%)",
+      accentColor: "var(--navy)",
       items: [
         "Multi-Platform Organic Social Strategy",
         "High-Engagement Content Planning & Publishing",
@@ -62,7 +62,7 @@ const ServicesCards = () => {
     },
     {
       title: "Performance Marketing & Paid Media",
-      gradient: "linear-gradient(90deg, #282B4A 0%, #F59E0B 100%)",
+      accentColor: "var(--corporate-blue)",
       items: [
         "Google Ads (Search, Performance Max, Display)",
         "Meta Ads (Facebook & Instagram High-ROI Scaling)",
@@ -73,7 +73,7 @@ const ServicesCards = () => {
     },
     {
       title: "SEO & Search Strategy",
-      gradient: "linear-gradient(90deg, #F59E0B 0%, #FBBF24 100%)",
+      accentColor: "var(--gold)",
       items: [
         "Comprehensive Technical SEO & Web Audits",
         "High-Intent Keyword Strategy & Competitor Analysis",
@@ -84,7 +84,7 @@ const ServicesCards = () => {
     },
     {
       title: "Content Writer & Copywriting",
-      gradient: "linear-gradient(90deg, #282B4A 0%, #3C4066 100%)",
+      accentColor: "var(--navy)",
       items: [
         "High-Converting Landing Pages & Website Copy",
         "Technical Content Writing & Enterprise Case Studies",
@@ -95,7 +95,7 @@ const ServicesCards = () => {
     },
     {
       title: "Video Editor & Motion Designer",
-      gradient: "linear-gradient(90deg, #D97706 0%, #F59E0B 100%)",
+      accentColor: "var(--corporate-blue)",
       items: [
         "Commercial & Corporate Video Production",
         "Short-Form Social Videos (Reels, TikToks, Shorts)",
@@ -106,7 +106,7 @@ const ServicesCards = () => {
     },
     {
       title: "Cloud & DevOps Talent",
-      gradient: "linear-gradient(90deg, #4D5380 0%, #282B4A 100%)",
+      accentColor: "var(--gold)",
       items: [
         "AWS, Azure & Google Cloud Architecture",
         "CI/CD Pipeline Automation (GitHub, GitLab, Jenkins)",
@@ -117,7 +117,7 @@ const ServicesCards = () => {
     },
     {
       title: "Cybersecurity & IT Infrastructure",
-      gradient: "linear-gradient(90deg, #FBBF24 0%, #F59E0B 100%)",
+      accentColor: "var(--navy)",
       items: [
         "Enterprise Security Audits & Vulnerability Testing",
         "Network Hardening, Firewalls & VPN Management",
@@ -128,7 +128,7 @@ const ServicesCards = () => {
     },
     {
       title: "Executive Tech & Marketing Search",
-      gradient: "linear-gradient(90deg, #282B4A 0%, #F59E0B 100%)",
+      accentColor: "var(--corporate-blue)",
       items: [
         "Confidential CTO, VP of Engineering & CPO Searches",
         "Chief Marketing Officer (CMO) & Growth Headhunting",
@@ -142,8 +142,8 @@ const ServicesCards = () => {
   return (
     <section className="services-section section-padding">
       <div className="container services-container">
-        
-        <div className="services-header text-center" data-aos="fade-up">
+
+        <div className="services-header text-center">
           <Link to="/services" className="section-label" style={{ display: 'inline-block', textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>Our Recruitment Practices</Link>
           <h2>Specialized IT &amp; Digital Marketing Hiring Services</h2>
           <p style={{ color: 'var(--color-text-muted)', maxWidth: '920px', margin: '0.8rem auto 0', fontSize: '1.05rem', lineHeight: '1.6' }}>
@@ -151,21 +151,19 @@ const ServicesCards = () => {
           </p>
         </div>
 
-        {/* 3-In-A-Row Practice Cards Grid (All Services in Reference Card Style with Website Brand Colors) */}
         <div className="services-practice-grid">
           {serviceCategories.map((cat, idx) => (
-            <div className="practice-card" key={idx} data-aos="fade-up" data-aos-delay={(idx % 3) * 100}>
-              {/* Top Accent Gradient Bar */}
-              <div className="practice-card-accent" style={{ background: cat.gradient }} />
-              
+            <div className="practice-card" key={idx}>
+              <div className="practice-card-accent" style={{ backgroundColor: cat.accentColor }} />
+
               <div className="practice-card-body">
                 <h3 className="practice-card-title">{cat.title}</h3>
-                
+
                 <ul className="practice-checklist">
                   {cat.items.map((item, itemIdx) => (
                     <li key={itemIdx} className="practice-check-item">
                       <span className="practice-check-icon">
-                        <Check size={12} strokeWidth={3} />
+                        <Check size={12} strokeWidth={3} aria-hidden="true" />
                       </span>
                       <span className="practice-item-text">{item}</span>
                     </li>
@@ -174,7 +172,7 @@ const ServicesCards = () => {
 
                 <div className="practice-card-footer">
                   <Link to="/contact" className="practice-contact-link" onClick={() => window.scrollTo(0, 0)}>
-                    Contact Us <ArrowRight size={15} />
+                    Contact Us <ArrowRight size={15} aria-hidden="true" />
                   </Link>
                 </div>
               </div>

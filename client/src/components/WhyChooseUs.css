@@ -1,51 +1,49 @@
 .why-section {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FAFAFC 180px, #FAFAFC calc(100% - 180px), #FFFFFF 100%);
-  padding: 6.5rem 0 7rem;
+  background-color: var(--warm-white);
+  padding: 5.5rem 0 6rem;
   position: relative;
-  border-top: none;
-  border-bottom: none;
 }
 
 .why-header {
   max-width: 820px;
-  margin: 0 auto 3.8rem;
+  margin: 0 auto 3.5rem;
 }
 
 .why-header .section-label {
   display: inline-block;
-  padding: 0.55rem 1.5rem;
-  font-size: 0.82rem;
+  padding: 0.45rem 1.15rem;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
   font-weight: 700;
-  border-radius: 50px;
-  background: var(--cream-dark);
-  color: var(--plum);
-  border: 1px solid var(--cream-dark);
+  border-radius: var(--border-radius-sm);
+  background-color: var(--ivory);
+  color: var(--navy);
+  border: 1px solid #D6CBB8;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.1rem;
 }
 
 .why-header h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.9rem, 2.8vw, 2.5rem);
   font-weight: 800;
   line-height: 1.22;
-  color: var(--plum);
+  color: var(--navy);
   margin-bottom: 1rem;
 }
 
 .why-subhead {
-  font-size: 1.1rem;
+  font-size: 1.06rem;
   color: var(--color-text-muted);
   line-height: 1.7;
 }
 
-/* Container for 3 + 2 layout (exact alignment as reference image) */
 .why-cards-container {
   display: flex;
   flex-direction: column;
   gap: 24px;
   max-width: 1240px;
-  margin: 0 auto 3.5rem;
+  margin: 0 auto 3rem;
 }
 
 .why-row-top {
@@ -61,32 +59,29 @@
 }
 
 .why-row-bottom .why-feature-card {
-  width: calc((100% - 48px) / 3); /* Exactly matches row 1 card width */
+  width: calc((100% - 48px) / 3);
 }
 
-/* Card Styling: Crisp white card on light luxury section background */
 .why-feature-card {
-  background: var(--white);
-  border-radius: 20px;
-  padding: 2.2rem 2rem 2rem;
-  box-shadow: 0 10px 30px -10px rgba(40, 43, 74, 0.07);
-  border: 1px solid var(--cream-dark);
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem 1.85rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 250px;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.3s ease;
+  min-height: 240px;
+  transition: var(--transition-smooth);
   position: relative;
 }
 
 .why-feature-card:hover {
-  transform: translateY(-6px);
-  background: var(--white);
-  border-color: var(--orange);
-  box-shadow: 0 18px 40px -10px rgba(40, 43, 74, 0.14);
+  transform: translateY(-3px);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-md);
 }
 
-/* Card Header: Number on Left, Pill Badge on Right */
 .card-header-row {
   display: flex;
   align-items: center;
@@ -95,37 +90,36 @@
 }
 
 .card-num {
+  font-family: var(--font-heading);
   font-size: 1.45rem;
   font-weight: 800;
-  color: var(--plum);
+  color: var(--navy);
   letter-spacing: -0.5px;
   line-height: 1;
-  display: inline-block;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: var(--transition-smooth);
 }
 
 .why-feature-card:hover .card-num {
-  color: var(--orange);
-  transform: scale(1.06);
+  color: var(--gold-text);
 }
 
 .card-badge {
-  background: var(--cream-dark);
-  color: var(--plum);
-  border: 1px solid var(--cream-dark);
+  background-color: var(--warm-white);
+  color: var(--navy);
+  border: 1px solid var(--border-light);
+  font-family: var(--font-heading);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.8px;
-  padding: 0.35rem 0.8rem;
-  border-radius: 50px;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--border-radius-sm);
   text-transform: uppercase;
 }
 
-/* Title & Description */
 .card-title {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--plum);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
   margin-bottom: 0.75rem;
   line-height: 1.3;
 }
@@ -138,17 +132,17 @@
   flex: 1;
 }
 
-/* Bottom Trust Guarantee Banner */
+/* Solid Deep Navy Trust Guarantee Banner */
 .why-trust-banner {
-  background: var(--plum);
-  border-radius: 20px;
-  padding: 2.2rem 3rem;
+  background-color: var(--navy);
+  border-radius: var(--border-radius-lg);
+  padding: 2.2rem 2.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  box-shadow: 0 18px 40px -12px rgba(40, 43, 74, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--corporate-blue);
   max-width: 1240px;
   margin: 0 auto;
 }
@@ -156,7 +150,7 @@
 .trust-stats-row {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2.25rem;
   flex: 1;
 }
 
@@ -169,9 +163,10 @@
 .trust-stat-icon {
   width: 44px;
   height: 44px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.12);
-  color: #FFFFFF;
+  border-radius: var(--border-radius-md);
+  background-color: var(--corporate-blue);
+  border: 1px solid #334E7D;
+  color: var(--gold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,32 +176,30 @@
 .trust-stat-item h4 {
   font-size: 1.02rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--warm-white);
   margin-bottom: 0.2rem;
 }
 
 .trust-stat-item p {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.84rem;
+  color: #CBD5E1;
   margin: 0;
 }
 
 .trust-cta-wrap .btn-primary {
-  background: #FFFFFF;
-  color: var(--plum) !important;
-  border-color: #FFFFFF;
+  background-color: var(--gold);
+  color: var(--navy) !important;
+  border-color: var(--gold);
   font-weight: 700;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
 }
 
 .trust-cta-wrap .btn-primary:hover {
-  background: var(--cream);
-  color: var(--plum) !important;
-  transform: translateY(-2px);
+  background-color: var(--gold-hover);
+  border-color: var(--gold-hover);
+  color: var(--navy) !important;
 }
 
-/* Responsive */
 @media (max-width: 1080px) {
   .why-row-top {
     grid-template-columns: repeat(2, 1fr);
@@ -239,11 +232,7 @@
 
 @media (max-width: 768px) {
   .why-section {
-    padding: 4.5rem 0;
-  }
-
-  .why-header h2 {
-    font-size: 2rem;
+    padding: 4rem 0;
   }
 
   .why-cards-container {
@@ -257,10 +246,10 @@
   }
 
   .why-feature-card {
-    padding: 1.8rem 1.5rem;
+    padding: 1.65rem 1.4rem;
   }
 
   .why-trust-banner {
-    padding: 1.8rem 1.4rem;
+    padding: 1.75rem 1.25rem;
   }
 }
